@@ -1,0 +1,1651 @@
+{
+ "model": "gpt-5.6-luna",
+ "input": "/home/myang18/SSG/driver_discovery/step2_clustering/result/clusters_request.json",
+ "clusters": [
+  {
+   "cluster": 74,
+   "size": 27,
+   "name": "Touchpad not working or intermittently failing",
+   "description": "Customers report touchpads that stop responding, lose the cursor, behave erratically, or disappear from settings. The shared driver is a laptop touchpad functionality failure, with only a few physical-condition or click-related variations.",
+   "coherence": "high",
+   "examples": [
+    "Touchpad stopped working after intermittent failures",
+    "Touchpad intermittently stops working and prevents cursor use",
+    "Touchpad stops working and pointer disappears",
+    "Touchpad stopped working in Windows",
+    "Touchpad intermittently stops responding and cursor disappears"
+   ]
+  },
+  {
+   "cluster": 81,
+   "size": 27,
+   "name": "Built-in camera not detected or working",
+   "description": "Customers report that the laptop\u2019s integrated camera fails, shows a blank or black image, or is unavailable in video applications. This cluster focuses on camera functionality, including detection and intermittent failures, rather than microphone or speaker audio.",
+   "coherence": "high",
+   "examples": [
+    "Laptop camera is not working",
+    "Laptop camera does not work",
+    "Laptop camera not detected during meetings",
+    "Camera will not turn on for video conferences",
+    "Camera not detected and camera drivers are missing"
+   ]
+  },
+  {
+   "cluster": 0,
+   "size": 22,
+   "name": "Productivity suite installation and license activation",
+   "description": "Customers mainly need help installing, activating, transferring, or regaining access to purchased or included productivity applications, especially Microsoft Office and Microsoft 365. A few requests concern email, antivirus subscriptions, administrator access, or migration, making this cluster broader than the account sign-in cluster.",
+   "coherence": "medium",
+   "examples": [
+    "Install and activate purchased Microsoft Office",
+    "Transfer Microsoft 365 license from old computer to new computer",
+    "Set up new laptop and install email and Microsoft applications",
+    "Activate Microsoft Office after computer cloning",
+    "Restore access to free Microsoft 365 trial offer"
+   ]
+  },
+  {
+   "cluster": 59,
+   "size": 20,
+   "name": "Screen distortion, flickering, or panel damage",
+   "description": "Customers report colored lines, pixelation, flickering, corrupted images, backlight failures, blackouts, or physical screen damage that may require replacement or warranty service. It is distinct from screens that remain completely blank and from blackouts tied to startup, power, or specific use conditions.",
+   "coherence": "medium",
+   "examples": [
+    "Laptop display intermittently flickers after repeated repairs",
+    "Screen display is scrambled and requires replacement",
+    "Laptop monitor issue requiring warranty service",
+    "Laptop screen displays colorful corruption during intensive graphics use",
+    "Laptop screen shows pixelated lines and colored distortion"
+   ]
+  },
+  {
+   "cluster": 13,
+   "size": 18,
+   "name": "BIOS update, settings, or recovery failure",
+   "description": "Customers need help with BIOS or firmware updates that fail, roll back, or leave the computer in recovery, as well as related BIOS settings, passwords, and boot-mode changes. The cluster covers firmware-level access and update problems rather than Windows application or hardware-peripheral issues.",
+   "coherence": "medium",
+   "examples": [
+    "BIOS update fails during installation after repeated crashes",
+    "BIOS update repeatedly fails to install",
+    "BIOS update will not complete",
+    "BIOS and firmware updates keep failing",
+    "BIOS update caused software and time synchronization errors"
+   ]
+  },
+  {
+   "cluster": 65,
+   "size": 17,
+   "name": "External monitor connection and setup",
+   "description": "Customers ask how to connect, configure, cable, or use one or more external monitors directly with a computer. This cluster is broader setup and compatibility guidance, rather than problems specific to a docking station.",
+   "coherence": "high",
+   "examples": [
+    "Connect two external monitors using recommended adapters",
+    "External monitor not detected through laptop display port",
+    "Use laptop with two external monitors",
+    "Connect external display through laptop USB-C port",
+    "Identify the correct cable for connecting an external display"
+   ]
+  },
+  {
+   "cluster": 101,
+   "size": 17,
+   "name": "General power-on or startup failure",
+   "description": "Customers report varied inability to turn on, start, boot, or remain powered on, including issues involving the power button, reset attempts, or initial setup. Unlike the other power clusters, these requests do not consistently mention missing charging lights, sudden onset, or a prior repair.",
+   "coherence": "medium",
+   "examples": [
+    "Laptop won't power on",
+    "Laptop won't power on despite power button and reset attempts",
+    "Laptop won't power on after third-party troubleshooting",
+    "Laptop won't power on because power button was unclear",
+    "Laptop will not turn on despite reset attempts"
+   ]
+  },
+  {
+   "cluster": 4,
+   "size": 17,
+   "name": "Operating system upgrades and update failures",
+   "description": "Customers ask whether the computer can receive a major operating system upgrade or need help installing, troubleshooting, or manually applying system updates. The cluster centers on upgrade eligibility and update installation problems, rather than activation or product licensing.",
+   "coherence": "high",
+   "examples": [
+    "Help updating laptop to Windows 11",
+    "Check whether laptop is eligible for Windows 11 update",
+    "Determine whether laptop can upgrade to Windows 11",
+    "Obtain and install the Windows 11 update",
+    "Whether this laptop can safely upgrade to Windows 11"
+   ]
+  },
+  {
+   "cluster": 67,
+   "size": 16,
+   "name": "Dock compatibility and general function",
+   "description": "Customers ask about docking station compatibility, detection, replacement, firmware, cables, and general operation, including dock ports and support for multiple displays. This differs from the neighboring cluster focused specifically on monitor and power dropouts while docked.",
+   "coherence": "high",
+   "examples": [
+    "Docking station not detected by laptop",
+    "Docking station USB ports are not working",
+    "Docking station is not working properly",
+    "Docking station HDMI ports not working",
+    "Docking station cannot connect two external monitors"
+   ]
+  },
+  {
+   "cluster": 79,
+   "size": 16,
+   "name": "Computer speakers or audio output silent",
+   "description": "Customers report no sound, missing audio devices, muted or distorted speakers, or unreliable output from built-in and wired external audio equipment. This cluster centers on general audio output rather than Bluetooth pairing or microphone input.",
+   "coherence": "high",
+   "examples": [
+    "Laptop audio has no sound",
+    "Laptop has no audio output",
+    "Computer has no sound and reports no audio device installed",
+    "No sound from computer speakers",
+    "Laptop speakers stopped working and show muted"
+   ]
+  },
+  {
+   "cluster": 60,
+   "size": 16,
+   "name": "Cracked or shattered laptop screen repair",
+   "description": "Customers seek repair, replacement, quotes, or warranty information for cracked, shattered, or otherwise externally damaged laptop screens. A few requests mention dents or damaged casing, but the primary issue is screen damage rather than hinge failure.",
+   "coherence": "high",
+   "examples": [
+    "Laptop screen smashed and needs repair",
+    "Laptop screen cracked and needs repair assistance",
+    "Arrange repair for damaged laptop screen",
+    "Cracked laptop display needs repair",
+    "Arrange repair for cracked laptop screen"
+   ]
+  },
+  {
+   "cluster": 26,
+   "size": 15,
+   "name": "Check existing repair case status",
+   "description": "Customers want updates on repair tickets, orders, parts, approvals, shipping information, quotes, cancellations, or work orders. Unlike cluster 29, these requests primarily ask for the current status or outcome of an existing repair process.",
+   "coherence": "medium",
+   "examples": [
+    "Check status of existing repair ticket",
+    "Check status of existing repair order",
+    "Check status of existing repair ticket with no email update",
+    "Check status of existing repair case",
+    "Check parts status for multiple existing repair tickets"
+   ]
+  },
+  {
+   "cluster": 21,
+   "size": 14,
+   "name": "Laptop returns, refunds, and exchanges",
+   "description": "Customers ask about returning recently purchased computers or accessories, obtaining refunds or shipping labels, and exchanging products within the return window. This focuses on standard purchase-return logistics rather than replacement of a defective device through support.",
+   "coherence": "high",
+   "examples": [
+    "Return newly delivered laptop and receive a replacement",
+    "Request a refund for the recently purchased laptop",
+    "Check laptop return policy",
+    "Return laptop to seller within the return window",
+    "Return original laptop and receive a return shipping label"
+   ]
+  },
+  {
+   "cluster": 43,
+   "size": 14,
+   "name": "Charger or charging port replacement",
+   "description": "Customers request replacement or purchase of defective, damaged, missing, or incompatible chargers, power cords, and related power supplies, or report damaged or loose charging ports. This cluster focuses on the external power accessory or charging-port hardware rather than the laptop's general power-on behavior.",
+   "coherence": "medium",
+   "examples": [
+    "Replace incomplete or defective laptop charger",
+    "Replace damaged laptop charger or charging cable",
+    "Replace defective laptop power cord",
+    "Damaged laptop charging port needs repair",
+    "Purchase a replacement Lenovo power cord"
+   ]
+  },
+  {
+   "cluster": 108,
+   "size": 14,
+   "name": "Forgotten Windows PIN or password access",
+   "description": "Customers cannot access Windows because they forgot, do not know, or changed the sign-in PIN or password, including on newly set up or shared computers. This cluster is broader than the PIN-specific sign-in failures in the neighboring cluster.",
+   "coherence": "high",
+   "examples": [
+    "Forgot laptop PIN and cannot access Windows login",
+    "Reset forgotten laptop PIN to regain login access",
+    "Recover forgotten Windows PIN and password to access laptop",
+    "Forgotten computer PIN prevents Windows login",
+    "Reset forgotten Windows password on old laptop"
+   ]
+  },
+  {
+   "cluster": 1,
+   "size": 14,
+   "name": "Account sign-in and verification during setup",
+   "description": "Customers call because account login, password, or verification steps prevent new-computer setup or access to applications and email. This is distinct from the productivity software cluster because the primary obstacle is account authentication rather than installing or licensing software.",
+   "coherence": "medium",
+   "examples": [
+    "Unable to add Microsoft account during computer setup",
+    "Cannot complete new laptop setup because Microsoft account login is blocked",
+    "Unable to complete Microsoft account setup without verification codes",
+    "Skip Microsoft account and understand setup password",
+    "Activate Microsoft 365 and resolve password issue"
+   ]
+  },
+  {
+   "cluster": 19,
+   "size": 13,
+   "name": "Replace laptop instead of warranty repair",
+   "description": "Customers request a replacement for a defective or nonworking laptop rather than sending it for warranty repair, including after a recent repair. This differs from repeated-failure replacement requests because the main issue is avoiding or bypassing the repair process.",
+   "coherence": "high",
+   "examples": [
+    "Replace laptop instead of waiting for warranty repair",
+    "Replace laptop instead of sending it for warranty repair",
+    "Replace defective laptop instead of waiting for repair",
+    "Replace laptop instead of completing warranty repair",
+    "Replace laptop instead of sending it for another repair"
+   ]
+  },
+  {
+   "cluster": 73,
+   "size": 13,
+   "name": "Keyboard keys intermittently fail",
+   "description": "Customers report keyboard keys or sections that work inconsistently, including intermittent typing, beeping, sticking, or repeated characters. This differs from clusters focused on consistently nonworking keys, physical damage, or complete keyboard failure.",
+   "coherence": "high",
+   "examples": [
+    "Keyboard keys intermittently stop working",
+    "Intermittent keyboard keys stop working",
+    "Several keyboard keys intermittently stop working",
+    "Laptop keyboard intermittently stops working",
+    "Laptop keyboard intermittently stops working entirely or partially"
+   ]
+  },
+  {
+   "cluster": 80,
+   "size": 13,
+   "name": "Built-in microphone not recording properly",
+   "description": "Customers call about an integrated or headset microphone that is not detected, produces very low or poor-quality audio, or intermittently stops working in meetings and recordings. It is distinct from camera problems and from failures involving audio output through speakers or headphones.",
+   "coherence": "medium",
+   "examples": [
+    "Built-in microphone does not detect or record voice",
+    "Laptop microphone stops working during meetings",
+    "Microphone not detected on all-in-one computer",
+    "Laptop microphone not working during video recording",
+    "Built-in microphone does not detect any input"
+   ]
+  },
+  {
+   "cluster": 39,
+   "size": 13,
+   "name": "No power with no charging indicator",
+   "description": "Customers report that the laptop will not power on or charge, typically with no charging or status light. This distinguishes the cluster by the absence of power indicators, unlike general startup failures or post-repair failures.",
+   "coherence": "high",
+   "examples": [
+    "Laptop won't power on or show charging light",
+    "Laptop won't power on or show charging lights",
+    "Laptop won't power on or show charging lights",
+    "Laptop will not power on or show charging lights",
+    "Laptop won't power on or charge, with no charging light"
+   ]
+  },
+  {
+   "cluster": 10,
+   "size": 13,
+   "name": "Recurring BitLocker recovery prompt or loop",
+   "description": "Customers report repeated BitLocker recovery screens that block startup, resets, or factory restoration, and may ask how to disable the recurring prompt. This differs from other clusters focused primarily on retrieving a missing key or recovering data.",
+   "coherence": "high",
+   "examples": [
+    "BitLocker recovery prompt appears after restarting laptop",
+    "BitLocker recovery key fails to unlock laptop",
+    "Reset laptop blocked by BitLocker recovery key",
+    "Factory reset fails and repeatedly prompts for BitLocker recovery key",
+    "Recover laptop locked at BitLocker recovery screen"
+   ]
+  },
+  {
+   "cluster": 44,
+   "size": 12,
+   "name": "Find the correct technical support channel",
+   "description": "Customers seek the appropriate support department, phone number, website path, or service channel for varied products and needs. This cluster is broader and more routing-oriented than the warranty-specific clusters.",
+   "coherence": "medium",
+   "examples": [
+    "Reach the correct support department for a Lenovo laptop",
+    "Get support for Lenovo smart plug",
+    "Get support for Lenovo server system",
+    "Get technical support for Yoga laptop",
+    "Get technical support for a tablet issue"
+   ]
+  },
+  {
+   "cluster": 53,
+   "size": 12,
+   "name": "Check standard warranty status and terms",
+   "description": "Customers ask whether a computer remains under warranty and how particular warranty terms affect repair, performance, opening the device, ownership transfer, or warranty linkage. This is a general status-and-policy cluster rather than one focused on a specific failure or damage event.",
+   "coherence": "medium",
+   "examples": [
+    "Check whether laptop is covered by warranty",
+    "Check whether laptop is still covered by warranty",
+    "Check whether laptop remains under warranty",
+    "Check whether laptop remains under warranty",
+    "Check whether laptop is still under warranty"
+   ]
+  },
+  {
+   "cluster": 33,
+   "size": 12,
+   "name": "Follow up on existing support case",
+   "description": "Customers seek access, status updates, case numbers, or continued assistance for recently opened technical support cases. This cluster centers on ongoing case follow-up rather than escalation or shipment changes.",
+   "coherence": "high",
+   "examples": [
+    "Follow up on existing support case",
+    "Follow up on an existing support case",
+    "Follow up on existing technical support case",
+    "Get assistance with recently opened support case",
+    "Access existing support case for further assistance"
+   ]
+  },
+  {
+   "cluster": 88,
+   "size": 12,
+   "name": "Repair and replacement case logistics",
+   "description": "Customers call about tracking, turnaround, shipping, depot or in-person repair options, onsite service, replacement shipments, and data handling during repair. This is broader repair and replacement logistics rather than only checking an existing technician case.",
+   "coherence": "medium",
+   "examples": [
+    "Check status of existing laptop repair ticket",
+    "Ask expected turnaround time for existing laptop repair",
+    "Check status of promised replacement laptop shipment",
+    "Send laptop to depot for diagnosis and repair quote",
+    "Find an in-person repair location for laptop problem"
+   ]
+  },
+  {
+   "cluster": 11,
+   "size": 12,
+   "name": "Missing boot device prevents startup",
+   "description": "Customers encounter missing or selectable boot-device errors, an absent operating system, or a system that opens BIOS instead of Windows. The defining issue is failure to locate the drive or boot target, rather than a general recovery loop.",
+   "coherence": "high",
+   "examples": [
+    "Laptop shows missing boot device or boot failure",
+    "Laptop shows default boot device missing and will not start Windows",
+    "Laptop shows default boot device missing after failed reset",
+    "Laptop shows select boot device error and will not start",
+    "Laptop shows Windows Boot Manager boot failure and will not start"
+   ]
+  },
+  {
+   "cluster": 45,
+   "size": 11,
+   "name": "Warranty upgrade for onsite coverage",
+   "description": "Customers ask to upgrade or extend warranty coverage to include onsite, premium, or accidental-damage support, often requesting pricing. A few requests concern specific repair or software coverage and the warranty impact of a user-installed SSD, but the main driver is expanded warranty protection.",
+   "coherence": "medium",
+   "examples": [
+    "Upgrade warranty to include onsite repair support",
+    "Upgrade warranty with onsite technician coverage",
+    "Upgrade warranty to Premier onsite support",
+    "Upgrade warranty for onsite laptop support",
+    "Extend warranty with premium onsite support"
+   ]
+  },
+  {
+   "cluster": 46,
+   "size": 11,
+   "name": "Extend or renew expired warranty coverage",
+   "description": "Customers ask to lengthen warranty protection, including after expiration, and add future repair, onsite, accidental damage, or software support. This differs from general warranty purchases because the focus is extending or renewing coverage terms.",
+   "coherence": "high",
+   "examples": [
+    "Extend warranty coverage after warranty expiration",
+    "Extend warranty coverage beyond the basic one-year term",
+    "Extend warranty for future repairs and onsite support",
+    "Purchase a one-year warranty extension and later add two more years",
+    "Extend warranty with accidental damage protection"
+   ]
+  },
+  {
+   "cluster": 95,
+   "size": 11,
+   "name": "Correct warranty dates and coverage records",
+   "description": "Customers ask to correct or verify warranty start dates, expiration dates, purchase details, and international coverage records. This differs from the other clusters by focusing primarily on the accuracy and scope of warranty records rather than repair handling or extension pricing.",
+   "coherence": "high",
+   "examples": [
+    "Correct incorrect warranty start date using purchase receipt",
+    "Correct warranty start date based on purchase date",
+    "Verify warranty coverage and expiration",
+    "Correct incorrect warranty start date and extended coverage records",
+    "Confirm the warranty expiration date"
+   ]
+  },
+  {
+   "cluster": 54,
+   "size": 11,
+   "name": "Black screen with system unresponsive",
+   "description": "Customers report a completely black or blank display associated with freezing, failed startup, inability to log in, or other unresponsive behavior. This differs from the other display cluster, where the computer continues running despite the black internal screen.",
+   "coherence": "high",
+   "examples": [
+    "Laptop screen went black and became unresponsive",
+    "Laptop screen is blank and unresponsive",
+    "Laptop screen went black with only cursor visible",
+    "Laptop screen stays black and SSD is not working",
+    "Laptop displays a completely black screen at startup"
+   ]
+  },
+  {
+   "cluster": 56,
+   "size": 11,
+   "name": "Black internal screen while system runs",
+   "description": "Customers report that the laptop powers on and continues running, with keyboard lights, fans, time display, or an external monitor working while the built-in screen remains black or extremely dim. The defining feature is an active system behind the failed internal display.",
+   "coherence": "high",
+   "examples": [
+    "Laptop screen stays black while keyboard powers on",
+    "Laptop screen remains black while keyboard lights up",
+    "Laptop screen stays black while keyboard lights turn on",
+    "Laptop screen stays black despite power lights",
+    "Laptop powers on but screen remains black"
+   ]
+  },
+  {
+   "cluster": 17,
+   "size": 11,
+   "name": "Check hardware compatibility and related features",
+   "description": "Customers ask whether hardware, ports, storage slots, expansion cards, drivers, and accessories are compatible, with a few related questions about SD card slots and cloud-storage warnings. The cluster is broader and more exploratory than Cluster 92's reports of hardware not being detected or operating incorrectly.",
+   "coherence": "low",
+   "examples": [
+    "Determine maximum SSD capacity for the laptop's second storage slot",
+    "Check whether the desktop has an additional PCI slot",
+    "Determine which thumb drive fits the computer's smaller USB slot",
+    "Find where to connect cable for second SSD installation",
+    "Find compatible video cards and power supplies for desktop upgrades"
+   ]
+  },
+  {
+   "cluster": 7,
+   "size": 11,
+   "name": "Windows PIN or biometric sign-in failure",
+   "description": "Customers are unable to sign in because the Windows PIN is rejected, unavailable, or stuck, often alongside failed facial recognition or fingerprint authentication. It focuses on PIN and biometric sign-in malfunction rather than primarily forgetting an unknown password or credential.",
+   "coherence": "high",
+   "examples": [
+    "Forgotten Windows PIN prevented computer login",
+    "Windows PIN won't work during sign-in",
+    "Cannot access Windows after forgetting PIN and failed facial recognition",
+    "Cannot enter PIN to log into desktop",
+    "Locked out of Windows without PIN or working fingerprint"
+   ]
+  },
+  {
+   "cluster": 72,
+   "size": 10,
+   "name": "Keyboard keys consistently not responding",
+   "description": "Customers report specific keyboard keys or groups of keys that no longer register, including laptop, desktop, external, and function keys. Unlike the intermittent-failure cluster, these requests describe persistent key-level nonresponse.",
+   "coherence": "high",
+   "examples": [
+    "Laptop keyboard keys are not working",
+    "Keyboard keys are not responding or working",
+    "Laptop keyboard keys are not working properly",
+    "Three keyboard keys are not working after software troubleshooting",
+    "Laptop keyboard keys G, H, F, 5, and F8 do not work"
+   ]
+  },
+  {
+   "cluster": 42,
+   "size": 10,
+   "name": "Laptop battery drains too quickly",
+   "description": "Customers report short battery life, rapid or overnight discharge, reduced capacity, and requests for battery replacement or improved runtime. One request concerns changing the charging limit rather than rapid drain, but battery charging behavior is the shared theme.",
+   "coherence": "medium",
+   "examples": [
+    "Laptop battery lasts only about two hours",
+    "Laptop battery draining rapidly",
+    "Laptop battery discharges quickly and needs replacement",
+    "Laptop battery drains overnight and does not last off charger",
+    "New laptop battery lasts only two hours"
+   ]
+  },
+  {
+   "cluster": 41,
+   "size": 10,
+   "name": "Battery will not charge or hold charge",
+   "description": "Customers report the battery staying at zero, failing to charge, or dying immediately when unplugged. This cluster focuses on the battery itself, including a request to identify a replacement battery.",
+   "coherence": "high",
+   "examples": [
+    "Laptop battery is not charging",
+    "Laptop battery remains at 0% and will not charge",
+    "Laptop battery remains at zero percent and will not charge",
+    "Laptop battery won't charge and dies when unplugged",
+    "Laptop battery dies immediately when unplugged and will not charge"
+   ]
+  },
+  {
+   "cluster": 12,
+   "size": 10,
+   "name": "Automatic repair loop prevents startup",
+   "description": "Customers report repeated automatic or startup repair screens, recovery errors, or corrupted system files that prevent booting and login. This differs from the missing-boot-device cluster because the system enters recovery or repair instead of primarily reporting no boot device.",
+   "coherence": "high",
+   "examples": [
+    "Windows stuck in automatic repair loop and cannot boot",
+    "Laptop frozen at Windows Automatic Repair error",
+    "Windows automatic repair cannot repair the computer",
+    "Windows automatic repair loop prevents login and computer use",
+    "Windows stuck in startup repair and cannot reset"
+   ]
+  },
+  {
+   "cluster": 15,
+   "size": 10,
+   "name": "Intermittent freezing and application crashes",
+   "description": "Customers call about computers freezing, becoming unresponsive, or occasionally crashing and closing applications during normal use. Unlike the nearby crash clusters, these reports primarily concern hangs and instability during active use rather than boot or recovery loops.",
+   "coherence": "high",
+   "examples": [
+    "Laptop freezes randomly despite completed troubleshooting",
+    "Laptop intermittently freezes and stops responding",
+    "Laptop repeatedly freezes and requires hard reboots",
+    "Computer intermittently freezes during use",
+    "Laptop crashes and closes applications unexpectedly"
+   ]
+  },
+  {
+   "cluster": 14,
+   "size": 10,
+   "name": "Repeated crashes, blue screens, or restarts",
+   "description": "Customers report frequent system crashes, blue-screen errors, sudden shutdowns, or restarts, generally during startup or normal Windows operation. This is distinct from recovery-loop cases because the main concern is recurring crashes or stop errors rather than failure to complete automatic repair.",
+   "coherence": "medium",
+   "examples": [
+    "Computer crashes and restarts after unexpected shutdown",
+    "Desktop computer continuously crashes multiple times daily",
+    "Computer crashes every ten minutes and stops responding",
+    "Laptop repeatedly crashes and restarts after logging into Windows",
+    "Computer repeatedly shuts down with persistent hypervisor blue-screen error"
+   ]
+  },
+  {
+   "cluster": 76,
+   "size": 10,
+   "name": "Connect laptop to networks and hotspots",
+   "description": "Customers need help connecting the laptop to available Wi-Fi networks, routers, Ethernet, school networks, or phone hotspots. This cluster is distinguished by the focus on joining specific networks or personal hotspots.",
+   "coherence": "high",
+   "examples": [
+    "Laptop cannot connect to the internet",
+    "Laptop cannot connect to available home Wi-Fi network",
+    "Laptop cannot connect to school Wi-Fi or mobile hotspot",
+    "Cannot connect laptop to wireless network",
+    "Laptop cannot connect to Wi-Fi or Ethernet"
+   ]
+  },
+  {
+   "cluster": 113,
+   "size": 10,
+   "name": "Wi-Fi adapter, network, or driver failure",
+   "description": "Customers report missing Wi-Fi options, unavailable networks, adapter problems, driver reinstallation failures, DHCP issues, or recurring wireless failures. These requests emphasize an underlying Wi-Fi component or configuration fault rather than simply connecting to a network.",
+   "coherence": "high",
+   "examples": [
+    "Laptop has no Wi-Fi options and cannot connect to the Internet",
+    "Computer cannot connect to Wi-Fi",
+    "Laptop cannot connect to Wi-Fi during initial setup",
+    "Laptop cannot connect to Wi-Fi and wireless driver will not reinstall",
+    "Laptop has no available Wi-Fi networks"
+   ]
+  },
+  {
+   "cluster": 49,
+   "size": 9,
+   "name": "Check current warranty activation status",
+   "description": "Customers ask whether coverage is active, expired, newly purchased, or when an extended warranty will take effect. This cluster centers on verifying coverage status and dates rather than purchasing or activating the plan.",
+   "coherence": "high",
+   "examples": [
+    "Check whether device warranty is currently active",
+    "Check whether device warranty is still active",
+    "Check when purchased extended warranty becomes active",
+    "Check recently expired warranty coverage",
+    "Check when new warranty becomes active"
+   ]
+  },
+  {
+   "cluster": 35,
+   "size": 9,
+   "name": "Correct device serial number or ID",
+   "description": "Customers need serial numbers, device IDs, motherboard identifiers, or related registration details corrected, recognized, or programmed for support and repair processing. Most requests concern identifier mismatches or rejected identifiers, with a few involving tools or IDs for specific device components or services.",
+   "coherence": "medium",
+   "examples": [
+    "Correct work order with mismatched device serial number",
+    "Correct wrong serial number on existing support case",
+    "Process work order with correct serial number and compatible motherboard",
+    "Correct serial number on existing repair work order",
+    "Send repair box for motherboard serial number issue"
+   ]
+  },
+  {
+   "cluster": 24,
+   "size": 9,
+   "name": "Repair shipment address and box issues",
+   "description": "Customers call about receiving, resending, redirecting, or canceling repair shipping boxes and replacement-part shipments. These requests focus on repair shipment logistics and delivery destinations rather than changing the repair service type.",
+   "coherence": "high",
+   "examples": [
+    "Receive repair shipping box at the correct address",
+    "Resend repair shipping box to updated address",
+    "Change repair shipment and return delivery address",
+    "Confirm existing repair order remains valid for shipping",
+    "Ship missing replacement parts for existing repair work order"
+   ]
+  },
+  {
+   "cluster": 116,
+   "size": 9,
+   "name": "Wireless mouse and keyboard setup or failure",
+   "description": "Customers mainly need help using wireless mouse and keyboard peripherals, including missing receivers, setup, and unresponsive input. A few requests instead concern touchpad repair follow-up or purchasing a compatible pen, making this cluster broader than the primary wireless-peripheral issue.",
+   "coherence": "medium",
+   "examples": [
+    "Touchpad connection after keyboard replacement",
+    "Wireless mouse has no cursor and does not work",
+    "Wireless mouse and keyboard not working with new desktop",
+    "Wireless mouse missing USB receiver dongle",
+    "Mouse clicks are not responding on the new computer"
+   ]
+  },
+  {
+   "cluster": 61,
+   "size": 9,
+   "name": "Broken laptop hinges needing repair",
+   "description": "Customers report cracked, broken, loose, or separating hinges and request repair or depot service. Unlike the adjacent cluster, the hinge is the main reported failure without a broader combination of detached screen and casing damage.",
+   "coherence": "high",
+   "examples": [
+    "Laptop hinge has a crack and needs repair",
+    "Laptop hinges are broken and need repair",
+    "Repair laptop with broken hinge from accidental damage",
+    "Laptop hinges pulled out of base needing repair or replacement",
+    "Laptop hinge is broken and needs depot repair"
+   ]
+  },
+  {
+   "cluster": 36,
+   "size": 9,
+   "name": "Computer completely dead, no power",
+   "description": "Customers report no power, lights, indicators, or response when attempting to turn on the computer or monitor. These cases are distinct from crash and restart issues because the system does not power on at all.",
+   "coherence": "high",
+   "examples": [
+    "Computer has no power, lights, or response",
+    "Computer no longer powers on",
+    "Computer will not power on",
+    "Computer has no power or indicator lights",
+    "Computer stopped working entirely and needs troubleshooting"
+   ]
+  },
+  {
+   "cluster": 57,
+   "size": 9,
+   "name": "Laptop powers on but screen stays blank",
+   "description": "Customers report a laptop that appears to power on but shows no image or illumination at all, including after a screen replacement or hard reset. The defining issue is persistent blank display output rather than intermittent blackouts or visible screen artifacts.",
+   "coherence": "high",
+   "examples": [
+    "Laptop powers on but screen does not display",
+    "Laptop powers on but screen stays blank",
+    "Laptop screen will not turn on",
+    "Laptop screen will not turn on",
+    "Laptop powers on but display remains blank after screen replacement"
+   ]
+  },
+  {
+   "cluster": 77,
+   "size": 9,
+   "name": "Intermittent Wi-Fi disconnections and slow speeds",
+   "description": "Customers report recurring Wi-Fi drops, inability to reconnect, weak or unreliable connections, latency, and very slow speeds across one or more networks. The cluster is distinguished by ongoing connection instability rather than post-reinstallation driver setup or hardware replacement.",
+   "coherence": "high",
+   "examples": [
+    "Laptop intermittently loses Wi-Fi connectivity",
+    "Laptop repeatedly loses Wi-Fi and cannot reconnect to any network",
+    "Laptop has intermittent Wi-Fi and internet connection interruptions",
+    "Laptop cannot connect to Wi-Fi and loses weak connection",
+    "Wi-Fi disconnects repeatedly on two laptops"
+   ]
+  },
+  {
+   "cluster": 111,
+   "size": 9,
+   "name": "Recover BitLocker key after hardware change",
+   "description": "Customers mainly need to locate or use a BitLocker recovery key to unlock the computer, especially after a system board or motherboard replacement. A few requests involve keyboard or USB input problems during recovery, with one unrelated activation-key outlier.",
+   "coherence": "medium",
+   "examples": [
+    "Recover BitLocker key to access locked laptop",
+    "Recover locked computer without BitLocker recovery key",
+    "Recover missing BitLocker key after system board replacement",
+    "Retrieve BitLocker recovery key after motherboard replacement",
+    "Recover Windows after BitLocker key unavailable and USB is not detected"
+   ]
+  },
+  {
+   "cluster": 32,
+   "size": 8,
+   "name": "Transfer to correct support department",
+   "description": "Customers request transfers to Premier, technical, gaming, specialized, human resources, or language-specific support teams, including after a prior transfer was disconnected. The defining issue is being routed from the current interaction to another department.",
+   "coherence": "medium",
+   "examples": [
+    "Transfer call to Premier Support",
+    "Transfer call to United States Premier support team",
+    "Transfer call to the correct technical support department",
+    "Transfer call to Legion support",
+    "Transfer call to the SSL support line"
+   ]
+  },
+  {
+   "cluster": 50,
+   "size": 8,
+   "name": "Post-expiration warranty coverage questions",
+   "description": "Customers ask whether repairs remain covered after expiration, what basic coverage includes, and whether coverage or eligibility is current. This cluster centers on interpreting coverage around expiration, rather than correcting records or arranging a repair.",
+   "coherence": "medium",
+   "examples": [
+    "Clarify warranty expiration and post-expiration repair coverage",
+    "Confirm warranty coverage for repair after expiration",
+    "Confirm whether repair remains covered after warranty expiration",
+    "Verify warranty coverage and purchase eligibility",
+    "Correct warranty start date and confirm current coverage"
+   ]
+  },
+  {
+   "cluster": 83,
+   "size": 8,
+   "name": "System board replacement and repair support",
+   "description": "Customers seek replacement or warranty assistance for failed internal components, especially motherboards, and help after board repair. This differs from general out-of-warranty repair and no-boot service through its focus on component or system-board replacement.",
+   "coherence": "medium",
+   "examples": [
+    "Hard disk problem requiring out-of-warranty repair",
+    "Purchased motherboard is malfunctioning and needs warranty assistance",
+    "Broken motherboard SATA connector requires warranty replacement",
+    "Obtain replacement motherboard for desktop repair",
+    "Computer has recurring problem after warranty repair"
+   ]
+  },
+  {
+   "cluster": 87,
+   "size": 8,
+   "name": "Defective device replacement or trade-in",
+   "description": "Customers seek to return faulty devices for a replacement or refund, compare replacement prices, or obtain trade-in credit. It differs from the broader purchase-return cluster by emphasizing defective-device resolution and replacement value, with one unrelated software request.",
+   "coherence": "medium",
+   "examples": [
+    "Request laptop return or exchange under warranty",
+    "Trade in or return faulty laptop for replacement",
+    "Ask price for replacement laptop",
+    "Check price of replacement laptop",
+    "Ask about laptop trade-in credit for another device"
+   ]
+  },
+  {
+   "cluster": 27,
+   "size": 8,
+   "name": "Change or cancel repair service type",
+   "description": "Customers want to switch between onsite, depot, or local authorized service, or cancel an existing repair request. The defining issue is changing the repair fulfillment method or service case status.",
+   "coherence": "high",
+   "examples": [
+    "Cancel mistaken onsite repair and arrange depot service",
+    "Update repair ticket for onsite technician instead of depot service",
+    "Request depot repair box instead of onsite visit",
+    "Change existing depot repair to onsite technician service",
+    "Use a local authorized service center instead of depot shipping"
+   ]
+  },
+  {
+   "cluster": 23,
+   "size": 8,
+   "name": "Track repair shipment deliveries",
+   "description": "Customers ask where repair boxes, labels, recovery media, return materials, replacement devices, or related communications are in the delivery process. This cluster focuses on shipment tracking and delivery status rather than preparing or resending materials.",
+   "coherence": "medium",
+   "examples": [
+    "Check delivery status of repair shipping box",
+    "Check tracking status of repair shipment box",
+    "Check status of warranty repair shipping box and label",
+    "Check status of existing repair case and shipping materials",
+    "Check status and tracking for recovery USB shipment"
+   ]
+  },
+  {
+   "cluster": 28,
+   "size": 8,
+   "name": "Obtain and prepare repair shipping materials",
+   "description": "Customers need a repair box, label, shipping address, or replacement shipping materials, or ask how to package the computer and what accessories to include. This differs from cluster 23 by focusing on obtaining and preparing materials rather than tracking delivery.",
+   "coherence": "high",
+   "examples": [
+    "Confirm repair box shipment for first laptop",
+    "Resend shipping materials for existing laptop repair",
+    "How to package and ship laptop for existing repair",
+    "Receive shipping box for computer repair",
+    "Receive missing box for existing laptop repair shipment"
+   ]
+  },
+  {
+   "cluster": 71,
+   "size": 8,
+   "name": "Physically damaged keyboard needs replacement",
+   "description": "Customers primarily seek repair or replacement for a broken or damaged keyboard, often requesting onsite service or a replacement keyboard assembly. One request concerns restoring keyboard-language switching, but the dominant driver is physical repair or replacement.",
+   "coherence": "high",
+   "examples": [
+    "Laptop keyboard is damaged and needs repair",
+    "Replace malfunctioning control key and arrange onsite keyboard repair",
+    "Keyboard keys not working and requesting onsite repair",
+    "Laptop keyboard is broken and no longer works",
+    "Replace a malfunctioning laptop keyboard"
+   ]
+  },
+  {
+   "cluster": 70,
+   "size": 8,
+   "name": "Complete keyboard failure and replacement options",
+   "description": "Customers report a keyboard that has broadly or completely stopped working, sometimes after a repair, update, or screen replacement, and may need a replacement or compatible alternative. This is broader than individual unresponsive keys and is distinct from requests centered on physical damage.",
+   "coherence": "medium",
+   "examples": [
+    "Keyboard not working and may need hardware replacement",
+    "Keyboard completely dead and needs replacement",
+    "Internal keyboard stopped working after motherboard replacement",
+    "Keyboard stopped working after update",
+    "Tablet keyboard stopped working"
+   ]
+  },
+  {
+   "cluster": 115,
+   "size": 8,
+   "name": "Keyboard diagnosis, power, and connection issues",
+   "description": "Customers report varied keyboard hardware and connectivity problems, including no typing despite lights, charging or power failures, RGB behavior, recovery-environment issues, and suspected heat damage. The cluster combines several diagnostic scenarios rather than one narrowly defined keyboard failure.",
+   "coherence": "low",
+   "examples": [
+    "Physical keyboard lights up but does not type",
+    "Keyboard and external keyboard are not working",
+    "Laptop keyboard malfunction requires diagnosis",
+    "Bluetooth keyboard won't charge or power on",
+    "Keyboard does not work on new touchscreen all-in-one"
+   ]
+  },
+  {
+   "cluster": 68,
+   "size": 8,
+   "name": "Laptop USB-C port hardware failures",
+   "description": "Customers report USB-C, Thunderbolt, or related laptop ports failing to charge, carry display output, or recognize connected devices. These are laptop port or controller problems, rather than failures of the docking station itself.",
+   "coherence": "high",
+   "examples": [
+    "USB-C ports are not working properly",
+    "USB-C and Thunderbolt ports are not working",
+    "USB-C port stopped charging and sending display output",
+    "Understand motherboard replacement for USB-C charging port failure",
+    "USB-C dock causes power surge and damages laptop USB ports"
+   ]
+  },
+  {
+   "cluster": 40,
+   "size": 8,
+   "name": "AC adapter or charging cable not working",
+   "description": "Customers report that the charger, adapter, or charging cable does not supply power, sometimes only working when positioned a certain way. This differs from battery-focused issues because the suspected failure is in the external charging equipment.",
+   "coherence": "high",
+   "examples": [
+    "Laptop is not charging despite using a working adapter",
+    "Laptop AC adapter stopped working and will not charge",
+    "Laptop stopped charging despite trying different chargers",
+    "Laptop adapter not charging the battery",
+    "Computer is not charging despite working charger"
+   ]
+  },
+  {
+   "cluster": 93,
+   "size": 8,
+   "name": "Boot-time recovery and restart loops",
+   "description": "Customers report systems repeatedly shutting down, restarting, or getting stuck at the manufacturer logo or automatic repair process. The cluster is distinguished by failed startup and recovery sequences rather than isolated crashes during normal use.",
+   "coherence": "high",
+   "examples": [
+    "Laptop shuts off and enters repeated recovery loop",
+    "Laptop starts then shuts down during automatic repair",
+    "Computer shuts down and recovery process fails",
+    "Computer freezes and shuts off repeatedly",
+    "Laptop does not fully shut down and resumes previous session"
+   ]
+  },
+  {
+   "cluster": 22,
+   "size": 8,
+   "name": "Replacement or upgrade Wi-Fi hardware",
+   "description": "Customers want to purchase, replace, upgrade, or return physical Wi-Fi or network-card hardware, including compatibility questions. This concerns the wireless component itself rather than installing drivers or troubleshooting connection drops.",
+   "coherence": "medium",
+   "examples": [
+    "Find and purchase a compatible replacement Wi-Fi card",
+    "Replace recently purchased laptop with Wi-Fi hardware failure",
+    "Order replacement network card for faulty laptop",
+    "Order a replacement Wi-Fi card for a ThinkPad laptop",
+    "Order compatible Wi-Fi chips for computers"
+   ]
+  },
+  {
+   "cluster": 8,
+   "size": 8,
+   "name": "Printer installation and printing problems",
+   "description": "Most customers need help installing printers or drivers, connecting network printers, resolving print errors, or fixing scanning and printed-output issues. PDF annotation and Quicken display problems are unrelated software outliers.",
+   "coherence": "medium",
+   "examples": [
+    "Printer missing from Windows and print queue shows errors",
+    "Install printer and scanner software; printing works but scanning fails",
+    "Network printer won't print from work computer",
+    "Install printer drivers on a new Windows 11 computer",
+    "Connect Brother printer to Lenovo all-in-one computer"
+   ]
+  },
+  {
+   "cluster": 5,
+   "size": 8,
+   "name": "Back up or restore personal files",
+   "description": "Customers ask how to preserve, recover, or restore personal files before repairs, resets, or operating system changes, or report that files are missing. This differs from Cluster 105, which focuses on data recovery from a failed hard drive, and Cluster 6, which focuses on recovery media.",
+   "coherence": "high",
+   "examples": [
+    "Recover or back up files before laptop repair",
+    "Preserve files before reinstalling the operating system",
+    "Save important files from inaccessible laptop",
+    "Restore laptop as a new PC without previous backup",
+    "Back up most files before upgrading to Windows 11"
+   ]
+  },
+  {
+   "cluster": 3,
+   "size": 8,
+   "name": "Scam security pop-ups and antivirus removal",
+   "description": "Customers call about alarming fake security warnings, persistent scam pop-ups, or antivirus software that is blocking the computer or repeatedly prompting. This differs from the other clusters because the focus is malware-like alerts and unwanted security software rather than account, operating system, or productivity software access.",
+   "coherence": "high",
+   "examples": [
+    "Remove recurring McAfee and resolve or reinstall problematic software",
+    "Computer locked by suspected scam virus with persistent alarm",
+    "Laptop blocked by fake Windows security pop-up warnings",
+    "Resolve Windows S mode preventing McAfee software access",
+    "Uninstall expired McAfee trial repeatedly prompting"
+   ]
+  },
+  {
+   "cluster": 2,
+   "size": 8,
+   "name": "Set up and register a new computer",
+   "description": "Customers seek help getting a newly purchased computer ready for personal use, including initial setup and product registration. This differs from factory-reset requests because the goal is configuring a new device rather than restoring it.",
+   "coherence": "medium",
+   "examples": [
+    "Set up newly purchased computer",
+    "Get help setting up new laptop correctly",
+    "Help setting up new laptop",
+    "Arrange in-home setup support for newly purchased desktop",
+    "Register a newly purchased laptop"
+   ]
+  },
+  {
+   "cluster": 86,
+   "size": 7,
+   "name": "Replace laptop after repeated repair failures",
+   "description": "Customers seek replacement or refund after multiple unsuccessful repairs, recurring shutdowns, crashes, or unresolved hardware problems. The defining factor is repeated repair failure rather than simply preferring replacement for a new or unrepaired device.",
+   "coherence": "high",
+   "examples": [
+    "Replace laptop due to repeated unresolved hardware problems",
+    "Replace laptop after repeated unsuccessful repairs",
+    "Replace laptop that keeps shutting down after previous repair",
+    "Replace laptop with repeated blue screens and complete crash",
+    "Replace recently purchased laptop at no cost"
+   ]
+  },
+  {
+   "cluster": 30,
+   "size": 7,
+   "name": "Escalate unresolved repair or warranty case",
+   "description": "Customers primarily want a supervisor or senior manager to address unresolved repair or warranty concerns. A few requests involve contacting a prior representative, obtaining a customer number, or purchasing software support.",
+   "coherence": "medium",
+   "examples": [
+    "Escalate unresolved repair case to a senior manager",
+    "Speak with a supervisor about unresolved repair support",
+    "Speak with a manager about unresolved repair and warranty concerns",
+    "Escalate warranty dispute to a supervisor",
+    "Connect with previous support representative about ongoing driver issue"
+   ]
+  },
+  {
+   "cluster": 69,
+   "size": 7,
+   "name": "Keyboard backlight failure and settings",
+   "description": "Customers report keyboard lighting that does not work, is uneven, or stops intermittently, and ask how to adjust brightness or color. All requests concern keyboard backlight operation or configuration rather than general keyboard key failures.",
+   "coherence": "high",
+   "examples": [
+    "Keyboard backlight stopped working",
+    "Turn on keyboard backlight that stopped working",
+    "Keyboard backlight not working on newly delivered laptop",
+    "Keyboard backlight is uneven and intermittently stops working",
+    "Laptop backlight LED remains nonfunctional after factory reset"
+   ]
+  },
+  {
+   "cluster": 66,
+   "size": 7,
+   "name": "Dock monitor and power dropouts",
+   "description": "Customers report a dock intermittently or consistently failing to detect monitors, provide adequate laptop power, or maintain charging and display connections. One request mentions phantom inputs, but most concern display and power behavior through a dock.",
+   "coherence": "high",
+   "examples": [
+    "Dock does not detect external monitors or provide enough laptop power",
+    "Second monitor intermittently loses signal through USB-C dock adapter",
+    "Resolve low-voltage issue when desktop is docked to monitor",
+    "Docking station intermittently loses monitors and laptop charging",
+    "Dock is not detecting connected monitors"
+   ]
+  },
+  {
+   "cluster": 117,
+   "size": 7,
+   "name": "Bluetooth headphones or speakers lack audio",
+   "description": "Customers report Bluetooth audio devices that fail to connect, disconnect, power on, or produce sound. Most requests concern wireless headphones or speakers, distinguishing this cluster from general speaker output and microphone issues.",
+   "coherence": "medium",
+   "examples": [
+    "Bluetooth headphones connect but produce no sound",
+    "Audio not working on camera and Bluetooth headphones",
+    "Bluetooth speaker disconnects without playing audio on Chromebook",
+    "Bluetooth radio cannot connect devices",
+    "Headphones no longer work or power on"
+   ]
+  },
+  {
+   "cluster": 82,
+   "size": 7,
+   "name": "Hinge-related screen detachment damage",
+   "description": "Customers report hinge damage accompanied by a detached, cracked, or nonresponsive screen, or separation between the display and the laptop base. This cluster is distinct from hinge-only repairs because the hinge failure has caused broader screen or casing separation.",
+   "coherence": "high",
+   "examples": [
+    "Laptop hinge popped out and screen is detached",
+    "Repair laptop hinge and damaged screen after a drop",
+    "Laptop screen cracked when closing, possibly due to hinge pressure",
+    "Repair laptop hinge damaged by a drop",
+    "Laptop screen detached from casing on first opening"
+   ]
+  },
+  {
+   "cluster": 78,
+   "size": 7,
+   "name": "Severe laptop slowness and lag",
+   "description": "Customers call about very slow booting, browsing, application use, downloads, or overall system performance, sometimes worsening after extended use or software changes. Most requests concern broad laptop slowness, with a few focused specifically on internet download speed.",
+   "coherence": "medium",
+   "examples": [
+    "Laptop's internet browsing is extremely slow and websites take minutes to load",
+    "Laptop is extremely slow and takes minutes to load Windows",
+    "Laptop runs slowly when opening applications and connecting to client network",
+    "Laptop experiences severe lag and sudden speed changes",
+    "Laptop becomes extremely slow after hours of use"
+   ]
+  },
+  {
+   "cluster": 64,
+   "size": 7,
+   "name": "Loud fan and general overheating",
+   "description": "Customers call about excessively loud fan operation, device heat, and sometimes reduced performance during normal use. Unlike the other fan clusters, these requests generally seek diagnosis of noisy or hot operation without a clearly reported fan failure or mechanical buzzing.",
+   "coherence": "high",
+   "examples": [
+    "Laptop fan is loud and device overheats",
+    "Laptop fan is excessively loud during operation",
+    "Laptop fan makes excessive noise",
+    "Laptop overheats with loud fans and slow performance",
+    "Laptop fan makes a loud noise"
+   ]
+  },
+  {
+   "cluster": 37,
+   "size": 7,
+   "name": "Power failure after prior repair",
+   "description": "Customers say the laptop still will not power on or work after a depot, warranty, or other prior repair. The defining feature is recurrence or persistence of the problem following repair service.",
+   "coherence": "high",
+   "examples": [
+    "Laptop still won't power on after repair",
+    "Laptop will not power on after recent repair",
+    "Laptop still will not power on after depot repair",
+    "Laptop won't start again after prior repair",
+    "Laptop will not power on and needs repair options"
+   ]
+  },
+  {
+   "cluster": 105,
+   "size": 7,
+   "name": "Recover or replace failed hard drive",
+   "description": "Customers report a crashed or inaccessible hard drive and ask about recovering files, replacing the drive, or obtaining related recovery information. This cluster is centered on hard-drive failure and non-booting systems rather than routine backup or creating recovery media.",
+   "coherence": "high",
+   "examples": [
+    "Recover files from failed laptop hard drive",
+    "Laptop hard drive crashed and cannot access Windows",
+    "Replace failed laptop hard drive",
+    "Obtain recovery media for the laptop",
+    "Recover pictures from failed hard drive"
+   ]
+  },
+  {
+   "cluster": 92,
+   "size": 7,
+   "name": "Storage drive and memory not detected",
+   "description": "Customers report startup or usability problems caused by undetected storage drives or incorrect or unavailable memory. This differs from Cluster 17 because these calls concern hardware detection and memory behavior rather than upgrade compatibility or feature guidance.",
+   "coherence": "medium",
+   "examples": [
+    "Laptop cannot find hard drive during startup",
+    "Storage drive detection errors interrupt computer use",
+    "Secondary hard drive is not detected by laptop",
+    "Desktop cannot detect hard drive after initial setup",
+    "Laptop stuck retraining RAM during startup"
+   ]
+  },
+  {
+   "cluster": 110,
+   "size": 7,
+   "name": "Operating system activation, edition, and S mode",
+   "description": "Customers need help with operating system activation, missing or incorrect edition licenses, identifying the original license, or leaving restricted S mode. This differs from the update cluster because the issue is licensing or software restrictions after or independent of updating.",
+   "coherence": "high",
+   "examples": [
+    "Windows 11 is not activated and no product key is found",
+    "Identify the original Windows version and activation license",
+    "Windows reinstalls as Home instead of purchased Pro edition",
+    "Windows remains in S mode and cannot download non-Microsoft apps",
+    "Verify Windows Pro license is included with new laptop"
+   ]
+  },
+  {
+   "cluster": 47,
+   "size": 6,
+   "name": "Activate or manage warranty renewal",
+   "description": "Customers report problems activating, reinstating, or registering purchased or renewed warranty coverage, along with a renewal payment page or auto-renewal request. This differs from status inquiries because the customer needs an activation or account-management action.",
+   "coherence": "high",
+   "examples": [
+    "Activate purchased warranty renewal coverage",
+    "Activate pending warranty registration",
+    "Reinstate expired warranty coverage",
+    "Resolve delayed activation of purchased extended warranty",
+    "Disable auto-renewal for warranty plan on an old product"
+   ]
+  },
+  {
+   "cluster": 48,
+   "size": 6,
+   "name": "Warranty extension pricing and terms",
+   "description": "Customers ask about the cost, payment terms, validity period, reinstatement fees, and recognition of warranty extensions or upgrades. The defining issue is purchasing or reinstating additional coverage.",
+   "coherence": "high",
+   "examples": [
+    "Ask about warranty extension pricing and available terms",
+    "Ask about warranty extension pricing and current issue coverage",
+    "Ask about warranty upgrade payment terms",
+    "Ask how long warranty upgrade pricing remains valid",
+    "Explain the $22 warranty reinstatement fee and extension terms"
+   ]
+  },
+  {
+   "cluster": 51,
+   "size": 6,
+   "name": "Warranty repair eligibility and charges",
+   "description": "Customers seek to confirm that a repair is covered, whether diagnostic or labor charges apply, what information is needed, or how to start a warranty repair. This cluster focuses on initiating and validating a repair under existing coverage.",
+   "coherence": "high",
+   "examples": [
+    "Confirm warranty coverage and potential repair charges",
+    "Confirm warranty coverage and required information for authorized repair",
+    "Confirm repair will not incur warranty charges",
+    "Confirm warranty coverage and no support charges",
+    "Start a warranty repair"
+   ]
+  },
+  {
+   "cluster": 98,
+   "size": 6,
+   "name": "Check coverage for accidental damage repairs",
+   "description": "Customers ask whether repairs are covered after drops, liquid damage, severe physical damage, hacking, crashes, or other specific incidents. The defining feature is coverage for damage or an incident rather than routine warranty status.",
+   "coherence": "high",
+   "examples": [
+    "Check warranty coverage for crashed laptop repair",
+    "Check warranty coverage for hacked laptop",
+    "Check warranty coverage for liquid-damaged laptop",
+    "Confirm accidental damage coverage after laptop was dropped again",
+    "Check warranty coverage for keyboard repair service"
+   ]
+  },
+  {
+   "cluster": 20,
+   "size": 6,
+   "name": "Replace recently purchased laptop",
+   "description": "Customers ask to replace a newly purchased or malfunctioning laptop, obtain a newer replacement, or address a physical defect present since purchase. These requests focus on replacement of a recent purchase, including purchases from a retailer, rather than failed warranty repairs.",
+   "coherence": "high",
+   "examples": [
+    "Replace recently purchased laptop instead of repairing it",
+    "Replace laptop that has malfunctioned since purchase",
+    "Purchase a replacement laptop",
+    "Replace laptop purchased from Walmart",
+    "Purchase newer laptop with faster delivery"
+   ]
+  },
+  {
+   "cluster": 34,
+   "size": 6,
+   "name": "Find authorized local repair provider",
+   "description": "Customers seek a nearby authorized repair center or want to arrange covered service through a local provider. Some also ask about repair estimates or reimbursement for local repairs, distinguishing this cluster from requests to replace the computer or correct its identifiers.",
+   "coherence": "high",
+   "examples": [
+    "Find nearby authorized repair provider",
+    "Arrange covered repair through an authorized local facility",
+    "Find nearest authorized repair center",
+    "Find authorized local warranty service for computer repair",
+    "Get repair cost estimate before approving service"
+   ]
+  },
+  {
+   "cluster": 91,
+   "size": 6,
+   "name": "Update customer account contact information",
+   "description": "Customers primarily request changes to account details such as address, phone number, or email. A few requests concern email administration, server alerts, or obtaining a repair shipping label, making this cluster less focused.",
+   "coherence": "medium",
+   "examples": [
+    "Update account address, phone number, and email",
+    "Email deletion checkbox does not respond consistently",
+    "Update repair case with alternative cell phone number",
+    "Delete thousands of emails more quickly",
+    "Configure SMTP email alerts on server"
+   ]
+  },
+  {
+   "cluster": 29,
+   "size": 6,
+   "name": "Follow up on existing support case",
+   "description": "Customers seek assistance or callbacks for an already opened support, repair, or order case. This is broader than the technician-specific coordination in cluster 89 and less focused on status tracking than cluster 26.",
+   "coherence": "medium",
+   "examples": [
+    "Follow up on existing ticket and technician callback",
+    "Get assistance with existing onsite repair case",
+    "Follow up on existing onsite support ticket for unresolved power issue",
+    "Follow up on existing repair and schedule fan replacement",
+    "Check status of existing technical support case"
+   ]
+  },
+  {
+   "cluster": 25,
+   "size": 6,
+   "name": "Existing repair status and technician scheduling",
+   "description": "Customers primarily want updates on an open repair or replacement case, including technician visit timing and delivery status. This cluster is more narrowly focused on monitoring and scheduling already-created repair cases.",
+   "coherence": "high",
+   "examples": [
+    "Check status of existing laptop repair and technician visit",
+    "Check status of existing laptop repair",
+    "Check status and schedule technician visit for existing laptop repair",
+    "Check status of pending laptop replacement",
+    "Check status of two computers sent for repair"
+   ]
+  },
+  {
+   "cluster": 102,
+   "size": 6,
+   "name": "Device will not power on or charge",
+   "description": "Customers report Chromebooks, laptops, or a tablet that will not turn on, show charging, or respond after charging and reset attempts. The cluster is focused on complete power or charging failure rather than battery runtime.",
+   "coherence": "high",
+   "examples": [
+    "Chromebook won't turn on and power light keeps blinking",
+    "Chromebook won't power on after charging and reset attempts",
+    "Chromebook won't turn on and needs warranty service",
+    "Laptop will not power on or charge",
+    "Chromebook shows no charging indicator when plugged in"
+   ]
+  },
+  {
+   "cluster": 38,
+   "size": 6,
+   "name": "Sudden shutdown and power failure",
+   "description": "Customers report that the laptop suddenly stopped working, shut down, or became unable to power on, including after an update or before reaching network access. The cluster is distinguished by the sudden onset or shutdown context rather than a persistent no-indicator condition.",
+   "coherence": "high",
+   "examples": [
+    "Laptop won't power on",
+    "Laptop suddenly stopped powering on",
+    "Laptop suddenly shut down and will not power on",
+    "Laptop will not turn on or do anything",
+    "Laptop won't power on after system update"
+   ]
+  },
+  {
+   "cluster": 103,
+   "size": 6,
+   "name": "Charging failure despite replacement chargers",
+   "description": "Customers report that the computer does not recognize chargers, show a charging indicator, charge the battery, or power on even after trying multiple or replacement chargers. It is broader than the other charging clusters and includes a tablet charging issue.",
+   "coherence": "medium",
+   "examples": [
+    "Laptop is not charging and shows no charging indicator",
+    "Laptop won't power on or charge despite replacement charger",
+    "Laptop stopped working, possibly battery or charging failure",
+    "Laptop does not recognize charger or charge battery",
+    "Laptop battery is not charging with multiple USB-C chargers"
+   ]
+  },
+  {
+   "cluster": 16,
+   "size": 6,
+   "name": "Sleep, wake, or unexpected power cycling",
+   "description": "Customers report problems entering sleep, waking from sleep, or unexpectedly waking and powering on. This differs from general crashes because the issue is tied specifically to sleep and lid-close behavior.",
+   "coherence": "high",
+   "examples": [
+    "Laptop intermittently fails to wake from sleep",
+    "Laptop cannot wake from sleep unless replugged",
+    "Laptop intermittently fails to wake after closing lid",
+    "Laptop cycles repeatedly between sleep and wake",
+    "Laptop won't enter sleep mode"
+   ]
+  },
+  {
+   "cluster": 55,
+   "size": 6,
+   "name": "Black screen triggered by login, movement, or video",
+   "description": "Customers report the display going black after Windows appears, immediately after login, when the lid or display is moved, or while video applications are open. These are usage- or transition-triggered blackouts rather than a continuously blank screen or primarily power-related failure.",
+   "coherence": "high",
+   "examples": [
+    "Laptop screen goes black during startup and use",
+    "Laptop screen goes black after Windows screen appears",
+    "Laptop screen goes black after entering password",
+    "Screen goes black when laptop display is opened or rotated",
+    "Screen goes black immediately after logging in"
+   ]
+  },
+  {
+   "cluster": 75,
+   "size": 6,
+   "name": "Wi-Fi driver installation after Windows reinstall",
+   "description": "Customers need to restore Wi-Fi or install the wireless driver after reinstalling or clean-installing Windows, often without an active internet connection. These requests focus on driver availability and setup rather than defective hardware or intermittent connectivity.",
+   "coherence": "high",
+   "examples": [
+    "Reinstall missing Wi-Fi driver after Windows reinstall",
+    "Install Wi-Fi driver after Windows reinstall without network connection",
+    "Troubleshoot Wi-Fi connection by reinstalling the laptop driver",
+    "Wi-Fi adapter disabled and drivers cannot be installed after OS reinstall",
+    "Wi-Fi unavailable during clean Windows installation"
+   ]
+  },
+  {
+   "cluster": 6,
+   "size": 6,
+   "name": "Create or obtain Windows recovery media",
+   "description": "Customers need a Windows recovery USB or factory recovery image, or encounter errors while creating or using recovery media to reinstall the operating system. Unlike Cluster 105, the main issue is the recovery media or reinstallation process, not a failed hard drive.",
+   "coherence": "high",
+   "examples": [
+    "Create Windows recovery USB for laptop that will not boot",
+    "Purchase USB recovery drive to reinstall Windows",
+    "Purchase Windows recovery media after creation repeatedly fails",
+    "Operating system recovery fails with preload error from USB drive",
+    "Cannot access Lenovo ID to create USB recovery media"
+   ]
+  },
+  {
+   "cluster": 62,
+   "size": 5,
+   "name": "Screen brightness controls not working",
+   "description": "Customers report that the display stays dim, changes brightness incorrectly, or ignores brightness-key and monitor controls. This cluster focuses specifically on malfunctioning brightness adjustment rather than general display problems.",
+   "coherence": "high",
+   "examples": [
+    "Screen brightness changes incorrectly when adjusting brightness",
+    "Screen brightness will not increase using brightness keys",
+    "Screen brightness becomes dark after every restart",
+    "Laptop screen remains dim despite maximum brightness settings",
+    "Monitor brightness controls do not work"
+   ]
+  },
+  {
+   "cluster": 31,
+   "size": 5,
+   "name": "Language-specific support connection requests",
+   "description": "Customers ask to connect with support or sales representatives speaking French, Spanish, or English, with one broader software-support connection request. This concerns reaching an appropriate language or support line, rather than transferring an active call between departments.",
+   "coherence": "medium",
+   "examples": [
+    "Connect with a French-speaking support agent",
+    "Speak with a French-language support representative",
+    "Connect with English-speaking sales support",
+    "Request Spanish-language technical support",
+    "Reach software support for assistance"
+   ]
+  },
+  {
+   "cluster": 90,
+   "size": 5,
+   "name": "Support phone number or eligibility information",
+   "description": "Customers seek the correct support phone number, phone menu, or confirmation that they qualify for a support service, with one request to reconnect to a prior representative. This cluster is primarily about finding or validating the right access route rather than requesting an active department transfer.",
+   "coherence": "high",
+   "examples": [
+    "Get phone number for Premier Support",
+    "Get correct support number for technician service",
+    "Confirm eligibility for Premier Support assistance",
+    "Find correct phone menu for Ultimate Care support",
+    "Reconnect with the previous support representative after disconnected call"
+   ]
+  },
+  {
+   "cluster": 99,
+   "size": 5,
+   "name": "Purchase additional warranty coverage",
+   "description": "Customers want to buy an extended or upgraded warranty for one or more devices, often while limited coverage remains. This cluster focuses on purchasing added protection rather than checking status or resolving activation problems.",
+   "coherence": "high",
+   "examples": [
+    "Purchase extended warranty coverage for the laptop",
+    "Extend or upgrade laptop warranty coverage",
+    "Purchase additional warranty for laptop with limited remaining coverage",
+    "Extend warranty coverage for both laptops before expiration",
+    "Activate or extend warranty for Chromebook"
+   ]
+  },
+  {
+   "cluster": 52,
+   "size": 5,
+   "name": "Warranty duration, region, and hardware coverage",
+   "description": "Customers ask about warranty length, coverage by purchase region, and whether hardware problems such as power or charging failures are covered. It is distinguished by questions about geographic scope, duration, and basic hardware-failure eligibility.",
+   "coherence": "high",
+   "examples": [
+    "Check warranty coverage for US-purchased laptop",
+    "Check laptop warranty duration and coverage",
+    "Check international warranty coverage for planned laptop purchase",
+    "Confirm laptop warranty coverage for power failure",
+    "Check warranty coverage for laptop charging problem"
+   ]
+  },
+  {
+   "cluster": 18,
+   "size": 5,
+   "name": "Out-of-warranty repair options",
+   "description": "Customers ask about paid repair availability, costs, or warranty-status corrections for computers outside coverage. This cluster is defined by repair eligibility after warranty expiration rather than a specific hardware symptom.",
+   "coherence": "high",
+   "examples": [
+    "Check repair options for out-of-warranty laptop",
+    "Ask about paid repair options for an out-of-warranty desktop",
+    "Correct incorrect out-of-warranty status for refurbished laptop",
+    "Repair crashed desktop that is outside warranty",
+    "Repair laptop battery, trackpad, and backlight problems"
+   ]
+  },
+  {
+   "cluster": 84,
+   "size": 5,
+   "name": "No-boot or no-power repair service",
+   "description": "Customers need repair for laptops or desktops that will not boot, start, or turn on, usually under warranty. It is distinguished from other repair clusters by the prominent no-start symptom.",
+   "coherence": "high",
+   "examples": [
+    "Laptop stopped working and needs warranty repair",
+    "Laptop won't boot and needs repair service",
+    "Resolve laptop no-boot issue under warranty",
+    "ThinkPad won't boot and needs out-of-warranty paid repair",
+    "Desktop will not turn on and needs warranty repair"
+   ]
+  },
+  {
+   "cluster": 89,
+   "size": 5,
+   "name": "Coordinate onsite technician repair",
+   "description": "Customers call about missed technician callbacks, rescheduling appointments, restarting technician work, or understanding closure of an onsite repair case. The defining feature is direct coordination with a field technician or onsite work order.",
+   "coherence": "high",
+   "examples": [
+    "Resume on-hold repair and coordinate technician contact",
+    "Follow up on missed technician callback for laptop service",
+    "Get field technician support for existing desktop work order",
+    "Reschedule onsite technician appointment for tomorrow",
+    "Understand why existing repair case was closed"
+   ]
+  },
+  {
+   "cluster": 63,
+   "size": 5,
+   "name": "Fan failure causing overheating and shutdown",
+   "description": "Customers report extreme CPU overheating, fan failure alerts or nonfunctioning fans, severe slowdown, and unexpected shutdowns. This cluster centers on critical thermal failure rather than ordinary fan noise.",
+   "coherence": "high",
+   "examples": [
+    "Laptop overheats, fan runs wildly, and hard reset is required",
+    "Laptop overheats and shuts down because the fan may not run",
+    "Laptop overheats and shuts off after several minutes",
+    "Computer reports CPU fan failure and runs extremely slowly",
+    "CPU temperature reaches 100 degrees after motherboard replacement"
+   ]
+  },
+  {
+   "cluster": 104,
+   "size": 5,
+   "name": "Fan buzzing or rattling needing repair",
+   "description": "Customers report unusual buzzing or rattling from the fan and often ask for expedited repair or warranty coverage. A few requests involve fan errors, overheating, crashes, or failure to boot, making this somewhat broader than the primary noise complaint.",
+   "coherence": "medium",
+   "examples": [
+    "Expedite repair for laptop fan making buzzing noise",
+    "Laptop fan makes buzzing and rattling noises",
+    "Check warranty coverage for laptop fan making unusual noise",
+    "Laptop won't boot because of a fan error",
+    "Laptop crashes and overheats during gaming"
+   ]
+  },
+  {
+   "cluster": 58,
+   "size": 5,
+   "name": "Desktop powers on with no display",
+   "description": "Customers report a desktop or all-in-one that powers on but produces no monitor image or video signal, sometimes with beeps or a black screen. This cluster focuses on complete loss of video output rather than display distortion or intermittent blackouts.",
+   "coherence": "high",
+   "examples": [
+    "Desktop powers on but produces no display or beeps",
+    "Desktop tower powers on but shows no monitor display",
+    "Desktop boots but produces no video signal",
+    "Desktop won't power on and shows black screen after boot",
+    "All-in-one display flashes white and shows no video"
+   ]
+  },
+  {
+   "cluster": 100,
+   "size": 5,
+   "name": "Intermittent black screen tied to power or startup",
+   "description": "Customers report black screens that recur depending on charger connection, unplugging, startup errors, or similar power-related conditions. This differs from blackouts triggered by login, opening or rotating the display, or video applications.",
+   "coherence": "medium",
+   "examples": [
+    "Laptop screen intermittently turns black",
+    "Laptop intermittently blacks out unless charger is connected",
+    "Laptop shows recurring KMODE exception black screen at startup",
+    "Desktop powers on but screen stays blank until unplugged",
+    "Browser videos keep spinning and will not play"
+   ]
+  },
+  {
+   "cluster": 114,
+   "size": 5,
+   "name": "Internet connectivity stopped or unavailable",
+   "description": "Customers report that the laptop cannot access the internet through Wi-Fi or Ethernet, including cases where Wi-Fi appears to work. This is a broad internet-access problem rather than a request focused on connecting to a particular network or fixing the wireless adapter.",
+   "coherence": "high",
+   "examples": [
+    "Laptop cannot connect to the internet",
+    "Cannot connect to internet despite working Wi-Fi",
+    "Laptop cannot find available home Wi-Fi network",
+    "Ethernet port does not connect to wired internet",
+    "Legion Go Wi-Fi stopped working"
+   ]
+  },
+  {
+   "cluster": 109,
+   "size": 5,
+   "name": "Tablet locked by forgotten PIN or account",
+   "description": "Customers cannot access a tablet because of a forgotten PIN, a previous owner's account, or a lock triggered after resetting the device. The stolen-device tracking request is an outlier, but most requests concern tablet access and account locks.",
+   "coherence": "medium",
+   "examples": [
+    "Tablet locked out after password or PIN entry",
+    "Cannot access tablet after forgotten password and corruption message",
+    "Forgot previous PIN required after factory resetting tablet",
+    "Remove previous owner's account and PIN from tablet",
+    "Track or remotely disable stolen tablet to protect stored information"
+   ]
+  },
+  {
+   "cluster": 9,
+   "size": 5,
+   "name": "Recover or reinstall Windows without BitLocker key",
+   "description": "Customers are trying to regain access, recover files, reset the laptop, or reinstall Windows when the BitLocker recovery key is unavailable. This is distinct from recurring BitLocker prompts and from key retrieval tied to hardware replacement.",
+   "coherence": "high",
+   "examples": [
+    "Recover BitLocker-locked laptop without a Microsoft recovery key",
+    "Recover BitLocker key to regain access to Windows",
+    "Recover files from BitLocker-locked laptop",
+    "Reset laptop and reinstall Windows without BitLocker recovery key",
+    "Windows reinstall fails after BitLocker recovery attempt"
+   ]
+  },
+  {
+   "cluster": 96,
+   "size": 4,
+   "name": "Check accidental damage warranty coverage",
+   "description": "Customers ask whether accidental physical damage, battery issues, or device replacement are covered, or whether an accidental coverage purchase is active. The defining topic is the scope and status of accidental damage protection.",
+   "coherence": "high",
+   "examples": [
+    "Check warranty coverage for accidental physical damage",
+    "Determine whether accidental damage coverage provides replacement",
+    "Check status of accidental coverage purchase",
+    "Clarify battery, hardware, and physical damage warranty coverage"
+   ]
+  },
+  {
+   "cluster": 94,
+   "size": 4,
+   "name": "Repair logistics after warranty purchase",
+   "description": "Customers ask about repair return shipping, diagnostic fee treatment, or canceling a repair after obtaining or using warranty coverage. It differs by focusing on the practical handling of a repair after a warranty purchase or repair request, rather than initial coverage verification.",
+   "coherence": "medium",
+   "examples": [
+    "Confirm warranty coverage and repair eligibility after warranty purchase",
+    "Clarify warranty repair return shipping charges",
+    "Cancel existing warranty repair after charging issue resolved",
+    "Whether diagnostic fee is applied toward repair cost"
+   ]
+  },
+  {
+   "cluster": 97,
+   "size": 4,
+   "name": "Verify warranty coverage and recurring charges",
+   "description": "Customers want to validate warranty status, reconcile conflicting coverage information, or understand a recurring service payment. It differs from general warranty-status questions through its emphasis on discrepancies and billing-related coverage.",
+   "coherence": "medium",
+   "examples": [
+    "Validate warranty coverage for Lenovo computer",
+    "Verify discrepancy between Lenovo and Best Buy warranty coverage",
+    "Verify laptop warranty coverage",
+    "Identify recurring Lenovo service payment and coverage"
+   ]
+  },
+  {
+   "cluster": 112,
+   "size": 4,
+   "name": "External display cable or port failure",
+   "description": "Customers report missing video or a failed cable or display port when connecting a monitor or television. It is distinct from the broader monitor setup cluster because these requests focus on a nonworking connection, with one unrelated screenshot request as an outlier.",
+   "coherence": "medium",
+   "examples": [
+    "External monitor lacks video when laptop powers on through USB-C dock",
+    "Replace nonworking USB-C monitor cable",
+    "HDMI port stopped working with television",
+    "Learn how to take screenshots using Windows snipping tools"
+   ]
+  },
+  {
+   "cluster": 85,
+   "size": 4,
+   "name": "Replacement motherboard installation defects",
+   "description": "Customers report problems with replacement system boards, such as failed memory slots, undetected graphics hardware, short risers, or damage causing no power. This cluster concerns replacement-board fit, compatibility, or component functionality rather than general motherboard failure.",
+   "coherence": "high",
+   "examples": [
+    "Replacement system board has a nonworking memory slot and won't boot",
+    "GPU is not detected after motherboard replacement",
+    "Replace burned motherboard and LCD cable causing no power",
+    "Replacement motherboard has short risers preventing heat sink installation"
+   ]
+  },
+  {
+   "cluster": 107,
+   "size": 4,
+   "name": "Transfer files and programs to new computer",
+   "description": "Customers want to move files, applications, or software from an old computer to a new one. This differs from general new-computer setup because the main need is migration of existing data and programs.",
+   "coherence": "high",
+   "examples": [
+    "Transfer files and applications to another laptop",
+    "Transfer software and programs from previous computer",
+    "Transfer files and save them correctly on new laptop",
+    "Transfer files from old tower to new desktop"
+   ]
+  },
+  {
+   "cluster": 106,
+   "size": 4,
+   "name": "Restore computer to factory settings",
+   "description": "Customers want to return a computer or tablet to its factory state, including after setup or login problems. This differs from new-computer setup because it involves resetting an existing configuration rather than establishing one.",
+   "coherence": "high",
+   "examples": [
+    "Restore laptop to factory settings for personal setup",
+    "Restore computer to factory settings without removing Windows",
+    "Restore new laptop to factory settings after setup login problem",
+    "Restore tablet to factory settings"
+   ]
+  }
+ ]
+}

@@ -1,0 +1,437 @@
+{
+ "model": "gpt-5.6-luna",
+ "calls": [
+  {
+   "genuuid": "[GEN_193ca8be9ac82269]",
+   "vcuuid": "[VC_efc836f4b7ede35e]",
+   "agentid": "[AGENT_a1f1f48bfba72f7b]",
+   "intent": "ServiceRequest",
+   "product": "Idea",
+   "start_time": "2025-10-13T18:21:19.816+0000",
+   "turns": "33",
+   "requests": [
+    {
+     "request": "Resolve Microsoft 365 setup showing other computers' icons",
+     "solution": "Transferred customer to paid PC support for Microsoft 365 setup assistance",
+     "customer_quote": "How do I resolve of of all the computers showing all the icons that are shared throughout OO3 computers?",
+     "agent_quote": "If you want, I can go ahead and enjoy too connect you over directly to them to help you out, OK.",
+     "is_primary": true,
+     "outcome": "transferred"
+    }
+   ],
+   "error": null
+  },
+  {
+   "genuuid": "[GEN_6c6361d4864fc347]",
+   "vcuuid": "[VC_bf9fbda8f96a89ba]",
+   "agentid": "[AGENT_e3110a3de51f0c67]",
+   "intent": "ServiceRequest",
+   "product": "Idea",
+   "start_time": "2025-10-07T18:52:53.458+0000",
+   "turns": "4",
+   "requests": [
+    {
+     "request": "Recover missing personal data and saved account information",
+     "solution": "No troubleshooting or resolution provided before the call ended",
+     "customer_quote": "What happened to all my other stuff I had up here?",
+     "agent_quote": "",
+     "is_primary": true,
+     "outcome": "unresolved"
+    }
+   ],
+   "error": null
+  },
+  {
+   "genuuid": "[GEN_7eaf9b4b9e22db9a]",
+   "vcuuid": "[VC_0a3e6d1df8873391]",
+   "agentid": "[AGENT_099e6cc502445cc2]",
+   "intent": "ServiceRequest",
+   "product": "Idea",
+   "start_time": "2025-10-03T18:10:14.799+0000",
+   "turns": "35",
+   "requests": [
+    {
+     "request": "Office 365 authentication hangs at Microsoft login screen",
+     "solution": "Advised contacting Microsoft or the reseller because Lenovo could not troubleshoot Office authentication",
+     "customer_quote": "It basically just hangs at the uh, Microsoft login screen.",
+     "agent_quote": "There's nothing else that we can do regarding this one if the Microsoft is not, have you tried coordinating with Microsoft directly for assistance regarding the Office subscription not authenticating?",
+     "is_primary": true,
+     "outcome": "out_of_scope"
+    }
+   ],
+   "error": null
+  },
+  {
+   "genuuid": "[GEN_50883e4d9cad3a4f]",
+   "vcuuid": "[VC_a8e2dab476d28411]",
+   "agentid": "[AGENT_0bc9961ba3539a88]",
+   "intent": "ServiceRequest",
+   "product": "Idea",
+   "start_time": "2025-10-11T19:53:39.239+0000",
+   "turns": "18",
+   "requests": [
+    {
+     "request": "Obtain customer number for online warranty claim",
+     "solution": "Requested device serial number; customer lacked it and was advised to call back",
+     "customer_quote": "we wanted to put in a like a warranty thing online, but it's asking us for a customer number",
+     "agent_quote": "we need the device serial number to check first.",
+     "is_primary": true,
+     "outcome": "unresolved"
+    }
+   ],
+   "error": null
+  },
+  {
+   "genuuid": "[GEN_b597f04103f0656c]",
+   "vcuuid": "[VC_4bca6be311e8328e]",
+   "agentid": "[AGENT_73cc35a7e6565435]",
+   "intent": "ServiceRequest",
+   "product": "Idea",
+   "start_time": "2025-10-01T17:58:46.861+0000",
+   "turns": "44",
+   "requests": [
+    {
+     "request": "Laptop screen stays off after freezing and unexpected reboot",
+     "solution": "Created depot repair ticket and arranged shipment box for warranty service",
+     "customer_quote": "So shut down manually and now I can't get the screen to turn back on.",
+     "agent_quote": "I just created the ticket for your box. So once you receive this you can able to send this computer directly on us.",
+     "is_primary": true,
+     "outcome": "in_progress"
+    }
+   ],
+   "error": null
+  },
+  {
+   "genuuid": "[GEN_b2357a6ad5295b9e]",
+   "vcuuid": "[VC_f2237857e198db91]",
+   "agentid": "[AGENT_394845d6fd9133a1]",
+   "intent": "ServiceRequest",
+   "product": "Idea",
+   "start_time": "2025-10-14T17:59:37.811+0000",
+   "turns": "32",
+   "requests": [
+    {
+     "request": "Laptop screen shattered after return from warranty repair",
+     "solution": "Advised returning laptop to depot for technician inspection and warranty screen repair",
+     "customer_quote": "I sent it back to have the webcam fixed and it just was returned and I just opened it and the screen is broken.",
+     "agent_quote": "I highly suggest to return back the computer to our default facility.",
+     "is_primary": true,
+     "outcome": "in_progress"
+    }
+   ],
+   "error": null
+  },
+  {
+   "genuuid": "[GEN_5dfb4dc4a28f5543]",
+   "vcuuid": "[VC_db6eafc1f5b5c99c]",
+   "agentid": "[AGENT_e96f7ae86ae26854]",
+   "intent": "ServiceRequest",
+   "product": "Think",
+   "start_time": "2025-10-01T19:41:29.233+0000",
+   "turns": "26",
+   "requests": [
+    {
+     "request": "System board self-repair tool appears after system board replacement",
+     "solution": "Transferred customer to an SSR agent for further assistance",
+     "customer_quote": "I've just replaced the system board on 1st boot.",
+     "agent_quote": "I will connect you with one of our SSR agents right now.",
+     "is_primary": true,
+     "outcome": "transferred"
+    }
+   ],
+   "error": null
+  },
+  {
+   "genuuid": "[GEN_2165e4fd8078b65e]",
+   "vcuuid": "[VC_6e928b4f3b66bba2]",
+   "agentid": "[AGENT_137a888becbf6228]",
+   "intent": "ServiceRequest",
+   "product": "Idea",
+   "start_time": "2025-10-04T20:23:22.226+0000",
+   "turns": "90",
+   "requests": [
+    {
+     "request": "Laptop is not charging and has no charging indicator",
+     "solution": "Performed power drain reset; charging resumed and battery status was confirmed after restart",
+     "customer_quote": "it doesn't it's not charging.",
+     "agent_quote": "Then umm, press and hold the power button for one minute.",
+     "is_primary": true,
+     "outcome": "resolved"
+    }
+   ],
+   "error": null
+  },
+  {
+   "genuuid": "[GEN_b4fd921edaefc543]",
+   "vcuuid": "[VC_ec12f1373beccdac]",
+   "agentid": "[AGENT_413b295a4203f22a]",
+   "intent": "ServiceRequest",
+   "product": "Think",
+   "start_time": "2025-10-08T15:01:36.199+0000",
+   "turns": "6",
+   "requests": [
+    {
+     "request": "Return new laptop due to being locked out",
+     "solution": "Transferred to customer care for return processing",
+     "customer_quote": "he said just to call and ask to send it back and get a new one.",
+     "agent_quote": "let me connect you with one of our customer care department so that they can do for you the re the return process.",
+     "is_primary": true,
+     "outcome": "transferred"
+    }
+   ],
+   "error": null
+  },
+  {
+   "genuuid": "[GEN_083b4ed1bc4ab9ab]",
+   "vcuuid": "[VC_b46cb9da9b10f597]",
+   "agentid": "[AGENT_e6bb02e614061063]",
+   "intent": "ServiceRequest",
+   "product": "Think",
+   "start_time": "2025-10-13T20:28:59.916+0000",
+   "turns": "104",
+   "requests": [
+    {
+     "request": "Laptop screen backlight defect affecting one-third of display",
+     "solution": "Opened case, requested photos and proof of purchase, then transferred call for RMA completion",
+     "customer_quote": "one of them when it arrived UMM has a screen defect where it looks like the backlight isn't working on like a 1/3 of the screen",
+     "agent_quote": "OK, now I submitted the case and you received an automated e-mail with the case number",
+     "is_primary": true,
+     "outcome": "transferred"
+    }
+   ],
+   "error": null
+  },
+  {
+   "genuuid": "[GEN_f798c901e63f6ead]",
+   "vcuuid": "[VC_772c4509512e92ad]",
+   "agentid": "[AGENT_33588e4fef3a0331]",
+   "intent": "ExistingServiceRequest",
+   "product": "Think",
+   "start_time": "2025-10-03T19:17:57.273+0000",
+   "turns": "15",
+   "requests": [
+    {
+     "request": "Provide requested case documents and oversized video evidence",
+     "solution": "Arranged callback from assigned case agent regarding submitted documents",
+     "customer_quote": "I have sent the pictures but I cannot upload the video because it's too it's too it's too big",
+     "agent_quote": "He's going to call you whenever you're finishing the current call",
+     "is_primary": true,
+     "outcome": "in_progress"
+    }
+   ],
+   "error": null
+  },
+  {
+   "genuuid": "[GEN_aa7d867b926a881f]",
+   "vcuuid": "[VC_97a657f9e26a7cc3]",
+   "agentid": "[AGENT_14f0ab53feda4285]",
+   "intent": "ServiceRequest",
+   "product": "Think",
+   "start_time": "2025-10-05T14:54:49.297+0000",
+   "turns": "19",
+   "requests": [
+    {
+     "request": "Laptop updates repeatedly fail to install",
+     "solution": "Transferred customer to the technical department for further troubleshooting",
+     "customer_quote": "When I turn on computer it's every guy show me about update but it's never update",
+     "agent_quote": "Well, I will transfer you to our technical department that's handling this product, OK.",
+     "is_primary": true,
+     "outcome": "transferred"
+    },
+    {
+     "request": "Laptop sometimes does not work properly",
+     "solution": "Transferred customer to the technical department for further troubleshooting",
+     "customer_quote": "sometimes it's work not properly.",
+     "agent_quote": "Well, I will transfer you to our technical department that's handling this product, OK.",
+     "is_primary": false,
+     "outcome": "transferred"
+    }
+   ],
+   "error": null
+  },
+  {
+   "genuuid": "[GEN_744f1aef9f08c84f]",
+   "vcuuid": "[VC_bf0eff8580dc1c69]",
+   "agentid": "[AGENT_382cbb9e40118448]",
+   "intent": "ServiceRequest",
+   "product": "Think",
+   "start_time": "2025-10-01T14:46:28.612+0000",
+   "turns": "42",
+   "requests": [
+    {
+     "request": "Wi-Fi and Ethernet do not connect on laptop",
+     "solution": "Explained device is out of warranty; recommended authorized center or warranty upgrade",
+     "customer_quote": "Yes, Wi-Fi. It has Wi-Fi and Ethernet and it's not connecting at all.",
+     "agent_quote": "we cannot do anything as this device is out of warranty.",
+     "is_primary": true,
+     "outcome": "out_of_scope"
+    }
+   ],
+   "error": null
+  },
+  {
+   "genuuid": "[GEN_5c0e043394e4e4ca]",
+   "vcuuid": "[VC_02fe2fffad698cde]",
+   "agentid": "[AGENT_137a888becbf6228]",
+   "intent": "ServiceRequest",
+   "product": "Idea",
+   "start_time": "2025-10-02T14:56:53.667+0000",
+   "turns": "23",
+   "requests": [
+    {
+     "request": "Determine whether extended warranty transfers when selling the computer",
+     "solution": "Confirmed warranty stays with the computer and new owner can contact Lenovo directly",
+     "customer_quote": "if in the near future I decided to sell this you know on a third party website or to a friend or whatever, will the warranty transfer to that person or does the warranty require?",
+     "agent_quote": "So it's now on the person, so it is stick to the computer.",
+     "is_primary": true,
+     "outcome": "resolved"
+    }
+   ],
+   "error": null
+  },
+  {
+   "genuuid": "[GEN_607fd4ab4e5f6e01]",
+   "vcuuid": "[VC_7644948943bbbfb6]",
+   "agentid": "[AGENT_73cc35a7e6565435]",
+   "intent": "ServiceRequest",
+   "product": "Idea",
+   "start_time": "2025-10-09T20:34:37.489+0000",
+   "turns": "25",
+   "requests": [
+    {
+     "request": "Intermittent camera and microphone failure",
+     "solution": "Referred customer to paid Best Buy Geek Squad for parts replacement",
+     "customer_quote": "I was having the issue with my my camera like it was going black.",
+     "agent_quote": "To Best Buy Geek Squad, they can also fix Lenovo computer there.",
+     "is_primary": true,
+     "outcome": "transferred"
+    }
+   ],
+   "error": null
+  },
+  {
+   "genuuid": "[GEN_a8b1b76548604764]",
+   "vcuuid": "[VC_5d14278022010f8b]",
+   "agentid": "[AGENT_9d7b307db1e8746c]",
+   "intent": "ServiceRequest",
+   "product": "Think",
+   "start_time": "2025-10-08T14:43:04.233+0000",
+   "turns": "24",
+   "requests": [
+    {
+     "request": "Extend out-of-warranty device warranty and clarify electronic delivery destination",
+     "solution": "Transferred customer to sales for warranty extension assistance",
+     "customer_quote": "I wanna put the warranty on. I can't get it to open up so I can't take an electronic delivery to that PC.",
+     "agent_quote": "So for this please allow me to connect you to our sales department. They will help you out to extend the warranty on your device.",
+     "is_primary": true,
+     "outcome": "transferred"
+    }
+   ],
+   "error": null
+  },
+  {
+   "genuuid": "[GEN_b4edcfdc003e2189]",
+   "vcuuid": "[VC_bb4fc684787fbec2]",
+   "agentid": "[AGENT_37a71e69d0fd7bd1]",
+   "intent": "ServiceRequest",
+   "product": "Idea",
+   "start_time": "2025-10-07T17:46:09.179+0000",
+   "turns": "97",
+   "requests": [
+    {
+     "request": "IdeaPad cannot connect to the Internet",
+     "solution": "Guided Wi-Fi and network settings checks and recommended restarting the laptop",
+     "customer_quote": "OK, I have an idea pad and I can't get it to connect to the Internet.",
+     "agent_quote": "kindly restart just to make sure.",
+     "is_primary": true,
+     "outcome": "unresolved"
+    }
+   ],
+   "error": null
+  },
+  {
+   "genuuid": "[GEN_2027257675787c53]",
+   "vcuuid": "[VC_d59d5d2c478b5b67]",
+   "agentid": "[AGENT_b34ffe5e0aeda994]",
+   "intent": "ServiceRequest",
+   "product": "Think",
+   "start_time": "2025-10-09T15:48:38.659+0000",
+   "turns": "4",
+   "requests": [
+    {
+     "request": "Register newly purchased laptop",
+     "solution": "No registration assistance provided before the call ended",
+     "customer_quote": "I just want to register my, my what is called laptop, you know, how can I do it?",
+     "agent_quote": "",
+     "is_primary": true,
+     "outcome": "unresolved"
+    }
+   ],
+   "error": null
+  },
+  {
+   "genuuid": "[GEN_823c9b51e4062ce3]",
+   "vcuuid": "[VC_09f25560234c9a72]",
+   "agentid": "[AGENT_413b295a4203f22a]",
+   "intent": "ServiceRequest",
+   "product": "Think",
+   "start_time": "2025-10-07T18:58:08.197+0000",
+   "turns": "9",
+   "requests": [
+    {
+     "request": "Computer is experiencing overheating problems",
+     "solution": "No troubleshooting completed before the call ended",
+     "customer_quote": "It's seems to be overheating",
+     "agent_quote": "",
+     "is_primary": false,
+     "outcome": "unresolved"
+    },
+    {
+     "request": "Battery drains rapidly during computer use",
+     "solution": "No troubleshooting completed before the call ended",
+     "customer_quote": "the battery is draining rapidly",
+     "agent_quote": "",
+     "is_primary": false,
+     "outcome": "unresolved"
+    },
+    {
+     "request": "Request warranty replacement for problem computer",
+     "solution": "Collected the serial number to review the replacement request",
+     "customer_quote": "I just need to get it replaced under warranty here.",
+     "agent_quote": "",
+     "is_primary": true,
+     "outcome": "unresolved"
+    }
+   ],
+   "error": null
+  },
+  {
+   "genuuid": "[GEN_927eddf824b461ec]",
+   "vcuuid": "[VC_58c48b561c440175]",
+   "agentid": "[AGENT_086733727ccba7da]",
+   "intent": "ServiceRequest",
+   "product": "Idea",
+   "start_time": "2025-10-15T14:20:21.723+0000",
+   "turns": "56",
+   "requests": [
+    {
+     "request": "Laptop hinge and screen damaged after falling, needs repair",
+     "solution": "Explained depot repair is available for a $109 diagnostic fee and subsequent repair quote",
+     "customer_quote": "It fell out of my laptop bag and it needs repair.",
+     "agent_quote": "There will be a diagnostic fee of $109 to send the unit back and depot technician will diagnose the computer",
+     "is_primary": true,
+     "outcome": "unresolved"
+    },
+    {
+     "request": "Check whether factory warranty covers accidental laptop damage",
+     "solution": "Explained the warranty excludes physical and accidental damage",
+     "customer_quote": "I wanted to know also the warrant, I know it has factory warranty",
+     "agent_quote": "However, this warranty will not cover any physical damage or accidental damage on the computer.",
+     "is_primary": false,
+     "outcome": "resolved"
+    }
+   ],
+   "error": null
+  }
+ ]
+}

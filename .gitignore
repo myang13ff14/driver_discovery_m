@@ -20,7 +20,12 @@ to_colleague/
 # search app embedding cache (rebuilt automatically)
 step6_checkingapp/step1/result/embedding_cache.npz
 
-# Keep transcript-derived caches and results local
+# Keep other generated results local
 **/result/
 feedback/excel/
 unsupervised/figures/*.png
+
+# Approved unsupervised caches and results
+!unsupervised/**/result/
+!unsupervised/**/result/**
+!unsupervised/figures/*.png

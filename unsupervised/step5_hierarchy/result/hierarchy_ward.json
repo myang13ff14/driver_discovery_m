@@ -1,0 +1,1464 @@
+{
+ "model": "gpt-5.6-luna",
+ "n_requests": 1183,
+ "unclustered": 109,
+ "moves": {
+  "L2": [
+   {
+    "child": "Printer installation and printing problems",
+    "from": "Network & Input Devices",
+    "to": "Software & Account Support"
+   },
+   {
+    "child": "Laptop USB-C port hardware failures",
+    "from": "External Displays & Docks",
+    "to": "System Software & Hardware"
+   },
+   {
+    "child": "Power failure after prior repair",
+    "from": "Returns and Replacements",
+    "to": "Repair Case Logistics"
+   },
+   {
+    "child": "Severe laptop slowness and lag",
+    "from": "Power & Charging",
+    "to": "System Software & Hardware"
+   },
+   {
+    "child": "Correct device serial number or ID",
+    "from": "Support Contact and Routing",
+    "to": "System Software & Hardware"
+   },
+   {
+    "child": "Update customer account contact information",
+    "from": "Support Contact and Routing",
+    "to": "Software & Account Support"
+   },
+   {
+    "child": "Restore computer to factory settings",
+    "from": "New Computer Setup",
+    "to": "Data & Recovery"
+   }
+  ],
+  "L1": [
+   {
+    "child": "Returns and Replacements",
+    "from": "Device Hardware",
+    "to": "Service Administration"
+   }
+  ]
+ },
+ "L1": [
+  {
+   "id": 0,
+   "name": "Device Hardware",
+   "description": "Calls concern physical or functional problems with the computer and its attached hardware, including displays, power and charging, keyboards, input devices, network adapters, docks, and screen or hinge damage. These are device troubleshooting or repair issues rather than software, service administration, or purchase-return requests.",
+   "size": 390,
+   "children": [
+    1,
+    7,
+    19,
+    9,
+    2,
+    5,
+    15
+   ],
+   "misfits": []
+  },
+  {
+   "id": 2,
+   "name": "Service Administration",
+   "description": "Calls concern warranty and protection-plan coverage, repair charges and eligibility, open-case follow-up, scheduling, shipping, replacement logistics, and reaching the correct support channel. These requests manage service access or an existing repair process rather than diagnose a device problem.",
+   "size": 300,
+   "children": [
+    3,
+    0,
+    10,
+    14
+   ],
+   "misfits": []
+  },
+  {
+   "id": 1,
+   "name": "System Software",
+   "description": "Calls concern operating-system and firmware behavior, internal components and configuration, software or account setup, boot and stability failures, data recovery, and preparing or migrating to a new computer. Use this domain when the primary issue involves the computer\u2019s software environment, platform, recovery process, or initial setup.",
+   "size": 247,
+   "children": [
+    4,
+    6,
+    16,
+    18,
+    11
+   ],
+   "misfits": []
+  },
+  {
+   "id": 3,
+   "name": "Multimedia & Cooling",
+   "description": "Calls concern built-in camera, microphone, speaker, headphone, and Bluetooth-audio functionality, along with fan operation, overheating, thermal alerts, and cooling-related shutdowns or performance problems.",
+   "size": 80,
+   "children": [
+    13,
+    12
+   ],
+   "misfits": []
+  },
+  {
+   "id": 4,
+   "name": "Access & Encryption",
+   "description": "Calls concern regaining access to Windows or a device when sign-in credentials, PINs, biometrics, account ownership, or BitLocker encryption block startup. Include recovery-key requests and access problems caused by resets, hardware changes, or unavailable authentication methods.",
+   "size": 57,
+   "children": [
+    8,
+    17
+   ],
+   "misfits": []
+  }
+ ],
+ "L2": [
+  {
+   "id": 3,
+   "name": "Warranty Coverage & Service",
+   "description": "Calls concern warranty status, terms, activation, renewal, extensions, coverage eligibility, accidental-damage protection, repair charges, and locating covered service. Use this area for questions about protection plans or whether and how a repair is covered.",
+   "size": 126,
+   "children": [
+    53,
+    45,
+    46,
+    95,
+    49,
+    50,
+    30,
+    47,
+    48,
+    51,
+    98,
+    34,
+    99,
+    52,
+    18,
+    96,
+    94,
+    97
+   ],
+   "misfits": [],
+   "validation": {
+    "top_step1_categories": {
+     "warranty": 108,
+     "repair case": 10,
+     "repair": 2,
+     "windows support": 1,
+     "support case": 1
+    },
+    "reference_category": "Warranty & Coverage",
+    "reference_agreement": 0.86
+   }
+  },
+  {
+   "id": 4,
+   "name": "System Software & Hardware",
+   "description": "Calls concern core system software and platform components, including BIOS and operating-system updates, activation, compatibility, hardware detection, system boards, storage, and memory. Use this area for firmware, operating-system, or internal platform configuration and component issues.",
+   "size": 96,
+   "children": [
+    13,
+    4,
+    17,
+    35,
+    83,
+    68,
+    92,
+    110,
+    78,
+    85
+   ],
+   "misfits": [],
+   "validation": {
+    "top_step1_categories": {
+     "bios": 19,
+     "windows update": 13,
+     "software": 8,
+     "windows": 7,
+     "motherboard": 7
+    },
+    "reference_category": "Operating System & Applications",
+    "reference_agreement": 0.31
+   }
+  },
+  {
+   "id": 0,
+   "name": "Repair Case Logistics",
+   "description": "Calls concern managing existing repair or support cases, including status updates, technician scheduling, service-type changes, shipment tracking, repair materials, and replacement logistics. Use this area when the customer is following up on or arranging an already-open repair process.",
+   "size": 96,
+   "children": [
+    26,
+    33,
+    88,
+    24,
+    27,
+    23,
+    28,
+    37,
+    29,
+    25,
+    89
+   ],
+   "misfits": [],
+   "validation": {
+    "top_step1_categories": {
+     "repair case": 79,
+     "order": 6,
+     "power on": 6,
+     "support case": 2,
+     "data backup": 1
+    },
+    "reference_category": "Repair & Service Case",
+    "reference_agreement": 0.85
+   }
+  },
+  {
+   "id": 1,
+   "name": "Network & Input Devices",
+   "description": "Calls concern Wi-Fi or internet access, wireless drivers and adapters, network connection reliability, touchpads, and wireless mouse or keyboard functionality. Use this area for connectivity or built-in and wireless input-device problems rather than unrelated printing issues.",
+   "size": 84,
+   "children": [
+    74,
+    76,
+    113,
+    116,
+    77,
+    22,
+    75,
+    114
+   ],
+   "misfits": [],
+   "validation": {
+    "top_step1_categories": {
+     "wi-fi": 41,
+     "touchpad": 21,
+     "mouse": 5,
+     "stylus": 2,
+     "software": 2
+    },
+    "reference_category": "Network & Wireless Connectivity",
+    "reference_agreement": 0.52
+   }
+  },
+  {
+   "id": 7,
+   "name": "Display & Screen Issues",
+   "description": "Calls concern laptop, desktop, or all-in-one display failures, including blank or black screens, distortion, flickering, damaged panels, brightness-control problems, and video output loss. The category covers both continuously failed displays and blackouts triggered by startup, power, movement, login, or application use.",
+   "size": 72,
+   "children": [
+    59,
+    54,
+    56,
+    57,
+    55,
+    62,
+    58,
+    100
+   ],
+   "misfits": [],
+   "validation": {
+    "top_step1_categories": {
+     "screen": 62,
+     "display": 2,
+     "software": 2,
+     "power on": 2,
+     "external monitor": 2
+    },
+    "reference_category": "Display",
+    "reference_agreement": 0.89
+   }
+  },
+  {
+   "id": 13,
+   "name": "Camera and Audio",
+   "description": "Calls concern built-in camera, microphone, speaker, headphone, and Bluetooth audio functionality, including devices that are not detected, produce no sound, or work unreliably.",
+   "size": 63,
+   "children": [
+    81,
+    79,
+    80,
+    117
+   ],
+   "misfits": [],
+   "validation": {
+    "top_step1_categories": {
+     "audio": 26,
+     "camera": 25,
+     "microphone": 4,
+     "software": 3,
+     "bluetooth": 3
+    },
+    "reference_category": "Audio, Camera & Biometrics",
+    "reference_agreement": 0.87
+   }
+  },
+  {
+   "id": 6,
+   "name": "Software & Account Support",
+   "description": "Calls concern installing, activating, accessing, or troubleshooting productivity software, user accounts, email, subscriptions, and related security software. Include sign-in and verification barriers when they primarily affect software or computer setup, as well as scam alerts and unwanted antivirus prompts.",
+   "size": 58,
+   "children": [
+    0,
+    1,
+    3,
+    8,
+    91
+   ],
+   "misfits": [],
+   "validation": {
+    "top_step1_categories": {
+     "software": 37,
+     "windows login": 6,
+     "printer": 5,
+     "account": 4,
+     "email": 2
+    },
+    "reference_category": "Operating System & Applications",
+    "reference_agreement": 0.69
+   }
+  },
+  {
+   "id": 19,
+   "name": "Power-On Failure",
+   "description": "Calls concern laptops, desktops, or tablets that will not turn on, charge, boot, or remain powered on, including cases with no lights or response and requests for no-start repair service. Include sudden shutdowns and persistent loss of power, but not ordinary battery-runtime questions.",
+   "size": 56,
+   "children": [
+    101,
+    39,
+    36,
+    102,
+    38,
+    84
+   ],
+   "misfits": [],
+   "validation": {
+    "top_step1_categories": {
+     "power on": 49,
+     "charging": 5,
+     "computer": 1,
+     "warranty": 1
+    },
+    "reference_category": "Power & Charging",
+    "reference_agreement": 0.96
+   }
+  },
+  {
+   "id": 16,
+   "name": "Boot & System Stability",
+   "description": "Calls concern failures to start or complete recovery, missing boot devices, repair loops, crashes, freezes, blue screens, restarts, and sleep or wake instability. Include systems that are unstable during Windows use or repeatedly fail during startup and recovery.",
+   "size": 56,
+   "children": [
+    11,
+    12,
+    15,
+    14,
+    93,
+    16
+   ],
+   "misfits": [],
+   "validation": {
+    "top_step1_categories": {
+     "software": 12,
+     "power on": 10,
+     "windows": 9,
+     "windows recovery": 6,
+     "windows boot": 3
+    },
+    "reference_category": "Operating System & Applications",
+    "reference_agreement": 0.5
+   }
+  },
+  {
+   "id": 9,
+   "name": "Keyboard Hardware & Backlight",
+   "description": "Calls concern keyboard keys or entire keyboards that fail intermittently or consistently, require diagnosis or replacement, or have physical damage or connectivity problems. Include keyboard backlight operation and lighting settings.",
+   "size": 54,
+   "children": [
+    73,
+    72,
+    71,
+    70,
+    115,
+    69
+   ],
+   "misfits": [],
+   "validation": {
+    "top_step1_categories": {
+     "keyboard": 51,
+     "software": 1,
+     "windows recovery": 1,
+     "screen": 1
+    },
+    "reference_category": "Keyboard, Touchpad & Pointing Devices",
+    "reference_agreement": 0.94
+   }
+  },
+  {
+   "id": 10,
+   "name": "Returns and Replacements",
+   "description": "Calls concern returning, refunding, exchanging, or replacing recently purchased or defective laptops and accessories. This includes requests to bypass repair or obtain a replacement after unsuccessful repairs.",
+   "size": 48,
+   "children": [
+    21,
+    19,
+    87,
+    86,
+    20
+   ],
+   "misfits": [],
+   "validation": {
+    "top_step1_categories": {
+     "order": 12,
+     "warranty": 11,
+     "return": 6,
+     "repair case": 5,
+     "replacement": 4
+    },
+    "reference_category": "Returns, Replacement & Refunds",
+    "reference_agreement": 0.54
+   }
+  },
+  {
+   "id": 2,
+   "name": "Power & Charging",
+   "description": "Calls concern batteries, chargers, charging cables and ports, including rapid drain, failure to hold or accept a charge, and replacement power accessories. Use this area when power delivery or charging behavior is the primary issue.",
+   "size": 48,
+   "children": [
+    43,
+    42,
+    41,
+    40,
+    103
+   ],
+   "misfits": [],
+   "validation": {
+    "top_step1_categories": {
+     "charging": 27,
+     "battery": 18,
+     "power cord": 1,
+     "order": 1,
+     "power on": 1
+    },
+    "reference_category": "Power & Charging",
+    "reference_agreement": 0.98
+   }
+  },
+  {
+   "id": 5,
+   "name": "External Displays & Docks",
+   "description": "Calls concern connecting, configuring, troubleshooting, or replacing external monitors, display cables, docking stations, and related display or power connections. This includes dock compatibility and monitor behavior through a dock, but not standalone laptop port hardware failures.",
+   "size": 44,
+   "children": [
+    65,
+    67,
+    66,
+    112
+   ],
+   "misfits": [],
+   "validation": {
+    "top_step1_categories": {
+     "external monitor": 21,
+     "docking station": 18,
+     "screen": 1,
+     "power supply": 1,
+     "charging": 1
+    },
+    "reference_category": "Docks, Monitors & Accessories",
+    "reference_agreement": 0.91
+   }
+  },
+  {
+   "id": 15,
+   "name": "Screen & Hinge Damage",
+   "description": "Calls concern physical damage to the laptop display, hinges, casing, or connections between the screen and base, including repair, replacement, quotes, and warranty eligibility. The main issue is external display or hinge damage rather than an electronic display malfunction.",
+   "size": 32,
+   "children": [
+    60,
+    61,
+    82
+   ],
+   "misfits": [],
+   "validation": {
+    "top_step1_categories": {
+     "screen": 14,
+     "hinge": 13,
+     "physical damage": 1,
+     "chassis": 1,
+     "warranty": 1
+    },
+    "reference_category": "Repair & Service Case",
+    "reference_agreement": 0.5
+   }
+  },
+  {
+   "id": 8,
+   "name": "Device Sign-In Recovery",
+   "description": "Calls concern regaining access to Windows or tablets when a PIN, password, biometric method, or prior account prevents sign-in. Include forgotten credentials, rejected or unavailable PINs, failed biometric authentication, and device locks after reset or ownership changes.",
+   "size": 30,
+   "children": [
+    108,
+    7,
+    109
+   ],
+   "misfits": [],
+   "validation": {
+    "top_step1_categories": {
+     "windows login": 25,
+     "device login": 2,
+     "software": 1,
+     "device security": 1,
+     "account": 1
+    },
+    "reference_category": "Accounts, Access & Security",
+    "reference_agreement": 0.97
+   }
+  },
+  {
+   "id": 14,
+   "name": "Support Contact and Routing",
+   "description": "Calls concern finding the correct support channel, phone number, department, language line, or service eligibility, including requests to transfer or reconnect with the appropriate support team.",
+   "size": 30,
+   "children": [
+    44,
+    32,
+    31,
+    90
+   ],
+   "misfits": [],
+   "validation": {
+    "top_step1_categories": {
+     "technical support": 5,
+     "software": 3,
+     "warranty": 3,
+     "support line": 2,
+     "language support": 2
+    },
+    "reference_category": "Repair & Service Case",
+    "reference_agreement": 0.57
+   }
+  },
+  {
+   "id": 17,
+   "name": "BitLocker Recovery",
+   "description": "Calls concern BitLocker recovery prompts, recovery loops, locating or using recovery keys, and regaining access to or reinstalling Windows when encryption blocks startup. Hardware changes may be the reason a recovery key is requested.",
+   "size": 27,
+   "children": [
+    10,
+    111,
+    9
+   ],
+   "misfits": [],
+   "validation": {
+    "top_step1_categories": {
+     "windows": 8,
+     "windows login": 7,
+     "software": 5,
+     "bitlocker": 4,
+     "windows update": 1
+    },
+    "reference_category": "Operating System & Applications",
+    "reference_agreement": 0.52
+   }
+  },
+  {
+   "id": 18,
+   "name": "Data & Recovery",
+   "description": "Calls concern protecting, restoring, or recovering personal files, replacing failed storage while seeking data recovery, and obtaining or using Windows recovery media for reinstallation. Include both routine backup needs and recovery actions prompted by storage or operating-system problems.",
+   "size": 25,
+   "children": [
+    5,
+    105,
+    6,
+    106
+   ],
+   "misfits": [],
+   "validation": {
+    "top_step1_categories": {
+     "software": 9,
+     "data backup": 6,
+     "windows": 2,
+     "data recovery": 2,
+     "windows recovery": 2
+    },
+    "reference_category": "Operating System & Applications",
+    "reference_agreement": 0.52
+   }
+  },
+  {
+   "id": 12,
+   "name": "Fan and Overheating",
+   "description": "Calls concern noisy, rattling, failed, or nonfunctioning fans, excessive heat, thermal alerts, performance degradation, and shutdowns related to cooling problems.",
+   "size": 17,
+   "children": [
+    64,
+    63,
+    104
+   ],
+   "misfits": [],
+   "validation": {
+    "top_step1_categories": {
+     "overheating": 6,
+     "fan": 5,
+     "cooling": 3,
+     "cooling fan": 2,
+     "power on": 1
+    },
+    "reference_category": "Thermal & Cooling",
+    "reference_agreement": 0.94
+   }
+  },
+  {
+   "id": 11,
+   "name": "New Computer Setup",
+   "description": "Calls concern preparing a new computer for use, registering it, or transferring files and programs from an older device. These requests focus on establishing or migrating to a new computer rather than repairing it.",
+   "size": 12,
+   "children": [
+    2,
+    107
+   ],
+   "misfits": [],
+   "validation": {
+    "top_step1_categories": {
+     "setup": 3,
+     "software": 3,
+     "account": 2,
+     "order": 1,
+     "setup support": 1
+    },
+    "reference_category": "Setup & Data Transfer",
+    "reference_agreement": 0.5
+   }
+  }
+ ],
+ "L3": [
+  {
+   "id": 74,
+   "name": "Touchpad not working or intermittently failing",
+   "description": "Customers report touchpads that stop responding, lose the cursor, behave erratically, or disappear from settings. The shared driver is a laptop touchpad functionality failure, with only a few physical-condition or click-related variations.",
+   "size": 27,
+   "coherence": "high"
+  },
+  {
+   "id": 81,
+   "name": "Built-in camera not detected or working",
+   "description": "Customers report that the laptop\u2019s integrated camera fails, shows a blank or black image, or is unavailable in video applications. This cluster focuses on camera functionality, including detection and intermittent failures, rather than microphone or speaker audio.",
+   "size": 27,
+   "coherence": "high"
+  },
+  {
+   "id": 0,
+   "name": "Productivity suite installation and license activation",
+   "description": "Customers mainly need help installing, activating, transferring, or regaining access to purchased or included productivity applications, especially Microsoft Office and Microsoft 365. A few requests concern email, antivirus subscriptions, administrator access, or migration, making this cluster broader than the account sign-in cluster.",
+   "size": 22,
+   "coherence": "medium"
+  },
+  {
+   "id": 59,
+   "name": "Screen distortion, flickering, or panel damage",
+   "description": "Customers report colored lines, pixelation, flickering, corrupted images, backlight failures, blackouts, or physical screen damage that may require replacement or warranty service. It is distinct from screens that remain completely blank and from blackouts tied to startup, power, or specific use conditions.",
+   "size": 20,
+   "coherence": "medium"
+  },
+  {
+   "id": 13,
+   "name": "BIOS update, settings, or recovery failure",
+   "description": "Customers need help with BIOS or firmware updates that fail, roll back, or leave the computer in recovery, as well as related BIOS settings, passwords, and boot-mode changes. The cluster covers firmware-level access and update problems rather than Windows application or hardware-peripheral issues.",
+   "size": 18,
+   "coherence": "medium"
+  },
+  {
+   "id": 65,
+   "name": "External monitor connection and setup",
+   "description": "Customers ask how to connect, configure, cable, or use one or more external monitors directly with a computer. This cluster is broader setup and compatibility guidance, rather than problems specific to a docking station.",
+   "size": 17,
+   "coherence": "high"
+  },
+  {
+   "id": 101,
+   "name": "General power-on or startup failure",
+   "description": "Customers report varied inability to turn on, start, boot, or remain powered on, including issues involving the power button, reset attempts, or initial setup. Unlike the other power clusters, these requests do not consistently mention missing charging lights, sudden onset, or a prior repair.",
+   "size": 17,
+   "coherence": "medium"
+  },
+  {
+   "id": 4,
+   "name": "Operating system upgrades and update failures",
+   "description": "Customers ask whether the computer can receive a major operating system upgrade or need help installing, troubleshooting, or manually applying system updates. The cluster centers on upgrade eligibility and update installation problems, rather than activation or product licensing.",
+   "size": 17,
+   "coherence": "high"
+  },
+  {
+   "id": 67,
+   "name": "Dock compatibility and general function",
+   "description": "Customers ask about docking station compatibility, detection, replacement, firmware, cables, and general operation, including dock ports and support for multiple displays. This differs from the neighboring cluster focused specifically on monitor and power dropouts while docked.",
+   "size": 16,
+   "coherence": "high"
+  },
+  {
+   "id": 79,
+   "name": "Computer speakers or audio output silent",
+   "description": "Customers report no sound, missing audio devices, muted or distorted speakers, or unreliable output from built-in and wired external audio equipment. This cluster centers on general audio output rather than Bluetooth pairing or microphone input.",
+   "size": 16,
+   "coherence": "high"
+  },
+  {
+   "id": 60,
+   "name": "Cracked or shattered laptop screen repair",
+   "description": "Customers seek repair, replacement, quotes, or warranty information for cracked, shattered, or otherwise externally damaged laptop screens. A few requests mention dents or damaged casing, but the primary issue is screen damage rather than hinge failure.",
+   "size": 16,
+   "coherence": "high"
+  },
+  {
+   "id": 26,
+   "name": "Check existing repair case status",
+   "description": "Customers want updates on repair tickets, orders, parts, approvals, shipping information, quotes, cancellations, or work orders. Unlike cluster 29, these requests primarily ask for the current status or outcome of an existing repair process.",
+   "size": 15,
+   "coherence": "medium"
+  },
+  {
+   "id": 21,
+   "name": "Laptop returns, refunds, and exchanges",
+   "description": "Customers ask about returning recently purchased computers or accessories, obtaining refunds or shipping labels, and exchanging products within the return window. This focuses on standard purchase-return logistics rather than replacement of a defective device through support.",
+   "size": 14,
+   "coherence": "high"
+  },
+  {
+   "id": 43,
+   "name": "Charger or charging port replacement",
+   "description": "Customers request replacement or purchase of defective, damaged, missing, or incompatible chargers, power cords, and related power supplies, or report damaged or loose charging ports. This cluster focuses on the external power accessory or charging-port hardware rather than the laptop's general power-on behavior.",
+   "size": 14,
+   "coherence": "medium"
+  },
+  {
+   "id": 108,
+   "name": "Forgotten Windows PIN or password access",
+   "description": "Customers cannot access Windows because they forgot, do not know, or changed the sign-in PIN or password, including on newly set up or shared computers. This cluster is broader than the PIN-specific sign-in failures in the neighboring cluster.",
+   "size": 14,
+   "coherence": "high"
+  },
+  {
+   "id": 1,
+   "name": "Account sign-in and verification during setup",
+   "description": "Customers call because account login, password, or verification steps prevent new-computer setup or access to applications and email. This is distinct from the productivity software cluster because the primary obstacle is account authentication rather than installing or licensing software.",
+   "size": 14,
+   "coherence": "medium"
+  },
+  {
+   "id": 19,
+   "name": "Replace laptop instead of warranty repair",
+   "description": "Customers request a replacement for a defective or nonworking laptop rather than sending it for warranty repair, including after a recent repair. This differs from repeated-failure replacement requests because the main issue is avoiding or bypassing the repair process.",
+   "size": 13,
+   "coherence": "high"
+  },
+  {
+   "id": 73,
+   "name": "Keyboard keys intermittently fail",
+   "description": "Customers report keyboard keys or sections that work inconsistently, including intermittent typing, beeping, sticking, or repeated characters. This differs from clusters focused on consistently nonworking keys, physical damage, or complete keyboard failure.",
+   "size": 13,
+   "coherence": "high"
+  },
+  {
+   "id": 80,
+   "name": "Built-in microphone not recording properly",
+   "description": "Customers call about an integrated or headset microphone that is not detected, produces very low or poor-quality audio, or intermittently stops working in meetings and recordings. It is distinct from camera problems and from failures involving audio output through speakers or headphones.",
+   "size": 13,
+   "coherence": "medium"
+  },
+  {
+   "id": 39,
+   "name": "No power with no charging indicator",
+   "description": "Customers report that the laptop will not power on or charge, typically with no charging or status light. This distinguishes the cluster by the absence of power indicators, unlike general startup failures or post-repair failures.",
+   "size": 13,
+   "coherence": "high"
+  },
+  {
+   "id": 10,
+   "name": "Recurring BitLocker recovery prompt or loop",
+   "description": "Customers report repeated BitLocker recovery screens that block startup, resets, or factory restoration, and may ask how to disable the recurring prompt. This differs from other clusters focused primarily on retrieving a missing key or recovering data.",
+   "size": 13,
+   "coherence": "high"
+  },
+  {
+   "id": 44,
+   "name": "Find the correct technical support channel",
+   "description": "Customers seek the appropriate support department, phone number, website path, or service channel for varied products and needs. This cluster is broader and more routing-oriented than the warranty-specific clusters.",
+   "size": 12,
+   "coherence": "medium"
+  },
+  {
+   "id": 53,
+   "name": "Check standard warranty status and terms",
+   "description": "Customers ask whether a computer remains under warranty and how particular warranty terms affect repair, performance, opening the device, ownership transfer, or warranty linkage. This is a general status-and-policy cluster rather than one focused on a specific failure or damage event.",
+   "size": 12,
+   "coherence": "medium"
+  },
+  {
+   "id": 33,
+   "name": "Follow up on existing support case",
+   "description": "Customers seek access, status updates, case numbers, or continued assistance for recently opened technical support cases. This cluster centers on ongoing case follow-up rather than escalation or shipment changes.",
+   "size": 12,
+   "coherence": "high"
+  },
+  {
+   "id": 88,
+   "name": "Repair and replacement case logistics",
+   "description": "Customers call about tracking, turnaround, shipping, depot or in-person repair options, onsite service, replacement shipments, and data handling during repair. This is broader repair and replacement logistics rather than only checking an existing technician case.",
+   "size": 12,
+   "coherence": "medium"
+  },
+  {
+   "id": 11,
+   "name": "Missing boot device prevents startup",
+   "description": "Customers encounter missing or selectable boot-device errors, an absent operating system, or a system that opens BIOS instead of Windows. The defining issue is failure to locate the drive or boot target, rather than a general recovery loop.",
+   "size": 12,
+   "coherence": "high"
+  },
+  {
+   "id": 45,
+   "name": "Warranty upgrade for onsite coverage",
+   "description": "Customers ask to upgrade or extend warranty coverage to include onsite, premium, or accidental-damage support, often requesting pricing. A few requests concern specific repair or software coverage and the warranty impact of a user-installed SSD, but the main driver is expanded warranty protection.",
+   "size": 11,
+   "coherence": "medium"
+  },
+  {
+   "id": 46,
+   "name": "Extend or renew expired warranty coverage",
+   "description": "Customers ask to lengthen warranty protection, including after expiration, and add future repair, onsite, accidental damage, or software support. This differs from general warranty purchases because the focus is extending or renewing coverage terms.",
+   "size": 11,
+   "coherence": "high"
+  },
+  {
+   "id": 95,
+   "name": "Correct warranty dates and coverage records",
+   "description": "Customers ask to correct or verify warranty start dates, expiration dates, purchase details, and international coverage records. This differs from the other clusters by focusing primarily on the accuracy and scope of warranty records rather than repair handling or extension pricing.",
+   "size": 11,
+   "coherence": "high"
+  },
+  {
+   "id": 54,
+   "name": "Black screen with system unresponsive",
+   "description": "Customers report a completely black or blank display associated with freezing, failed startup, inability to log in, or other unresponsive behavior. This differs from the other display cluster, where the computer continues running despite the black internal screen.",
+   "size": 11,
+   "coherence": "high"
+  },
+  {
+   "id": 56,
+   "name": "Black internal screen while system runs",
+   "description": "Customers report that the laptop powers on and continues running, with keyboard lights, fans, time display, or an external monitor working while the built-in screen remains black or extremely dim. The defining feature is an active system behind the failed internal display.",
+   "size": 11,
+   "coherence": "high"
+  },
+  {
+   "id": 17,
+   "name": "Check hardware compatibility and related features",
+   "description": "Customers ask whether hardware, ports, storage slots, expansion cards, drivers, and accessories are compatible, with a few related questions about SD card slots and cloud-storage warnings. The cluster is broader and more exploratory than Cluster 92's reports of hardware not being detected or operating incorrectly.",
+   "size": 11,
+   "coherence": "low"
+  },
+  {
+   "id": 7,
+   "name": "Windows PIN or biometric sign-in failure",
+   "description": "Customers are unable to sign in because the Windows PIN is rejected, unavailable, or stuck, often alongside failed facial recognition or fingerprint authentication. It focuses on PIN and biometric sign-in malfunction rather than primarily forgetting an unknown password or credential.",
+   "size": 11,
+   "coherence": "high"
+  },
+  {
+   "id": 72,
+   "name": "Keyboard keys consistently not responding",
+   "description": "Customers report specific keyboard keys or groups of keys that no longer register, including laptop, desktop, external, and function keys. Unlike the intermittent-failure cluster, these requests describe persistent key-level nonresponse.",
+   "size": 10,
+   "coherence": "high"
+  },
+  {
+   "id": 42,
+   "name": "Laptop battery drains too quickly",
+   "description": "Customers report short battery life, rapid or overnight discharge, reduced capacity, and requests for battery replacement or improved runtime. One request concerns changing the charging limit rather than rapid drain, but battery charging behavior is the shared theme.",
+   "size": 10,
+   "coherence": "medium"
+  },
+  {
+   "id": 41,
+   "name": "Battery will not charge or hold charge",
+   "description": "Customers report the battery staying at zero, failing to charge, or dying immediately when unplugged. This cluster focuses on the battery itself, including a request to identify a replacement battery.",
+   "size": 10,
+   "coherence": "high"
+  },
+  {
+   "id": 12,
+   "name": "Automatic repair loop prevents startup",
+   "description": "Customers report repeated automatic or startup repair screens, recovery errors, or corrupted system files that prevent booting and login. This differs from the missing-boot-device cluster because the system enters recovery or repair instead of primarily reporting no boot device.",
+   "size": 10,
+   "coherence": "high"
+  },
+  {
+   "id": 15,
+   "name": "Intermittent freezing and application crashes",
+   "description": "Customers call about computers freezing, becoming unresponsive, or occasionally crashing and closing applications during normal use. Unlike the nearby crash clusters, these reports primarily concern hangs and instability during active use rather than boot or recovery loops.",
+   "size": 10,
+   "coherence": "high"
+  },
+  {
+   "id": 14,
+   "name": "Repeated crashes, blue screens, or restarts",
+   "description": "Customers report frequent system crashes, blue-screen errors, sudden shutdowns, or restarts, generally during startup or normal Windows operation. This is distinct from recovery-loop cases because the main concern is recurring crashes or stop errors rather than failure to complete automatic repair.",
+   "size": 10,
+   "coherence": "medium"
+  },
+  {
+   "id": 76,
+   "name": "Connect laptop to networks and hotspots",
+   "description": "Customers need help connecting the laptop to available Wi-Fi networks, routers, Ethernet, school networks, or phone hotspots. This cluster is distinguished by the focus on joining specific networks or personal hotspots.",
+   "size": 10,
+   "coherence": "high"
+  },
+  {
+   "id": 113,
+   "name": "Wi-Fi adapter, network, or driver failure",
+   "description": "Customers report missing Wi-Fi options, unavailable networks, adapter problems, driver reinstallation failures, DHCP issues, or recurring wireless failures. These requests emphasize an underlying Wi-Fi component or configuration fault rather than simply connecting to a network.",
+   "size": 10,
+   "coherence": "high"
+  },
+  {
+   "id": 49,
+   "name": "Check current warranty activation status",
+   "description": "Customers ask whether coverage is active, expired, newly purchased, or when an extended warranty will take effect. This cluster centers on verifying coverage status and dates rather than purchasing or activating the plan.",
+   "size": 9,
+   "coherence": "high"
+  },
+  {
+   "id": 35,
+   "name": "Correct device serial number or ID",
+   "description": "Customers need serial numbers, device IDs, motherboard identifiers, or related registration details corrected, recognized, or programmed for support and repair processing. Most requests concern identifier mismatches or rejected identifiers, with a few involving tools or IDs for specific device components or services.",
+   "size": 9,
+   "coherence": "medium"
+  },
+  {
+   "id": 24,
+   "name": "Repair shipment address and box issues",
+   "description": "Customers call about receiving, resending, redirecting, or canceling repair shipping boxes and replacement-part shipments. These requests focus on repair shipment logistics and delivery destinations rather than changing the repair service type.",
+   "size": 9,
+   "coherence": "high"
+  },
+  {
+   "id": 116,
+   "name": "Wireless mouse and keyboard setup or failure",
+   "description": "Customers mainly need help using wireless mouse and keyboard peripherals, including missing receivers, setup, and unresponsive input. A few requests instead concern touchpad repair follow-up or purchasing a compatible pen, making this cluster broader than the primary wireless-peripheral issue.",
+   "size": 9,
+   "coherence": "medium"
+  },
+  {
+   "id": 61,
+   "name": "Broken laptop hinges needing repair",
+   "description": "Customers report cracked, broken, loose, or separating hinges and request repair or depot service. Unlike the adjacent cluster, the hinge is the main reported failure without a broader combination of detached screen and casing damage.",
+   "size": 9,
+   "coherence": "high"
+  },
+  {
+   "id": 36,
+   "name": "Computer completely dead, no power",
+   "description": "Customers report no power, lights, indicators, or response when attempting to turn on the computer or monitor. These cases are distinct from crash and restart issues because the system does not power on at all.",
+   "size": 9,
+   "coherence": "high"
+  },
+  {
+   "id": 57,
+   "name": "Laptop powers on but screen stays blank",
+   "description": "Customers report a laptop that appears to power on but shows no image or illumination at all, including after a screen replacement or hard reset. The defining issue is persistent blank display output rather than intermittent blackouts or visible screen artifacts.",
+   "size": 9,
+   "coherence": "high"
+  },
+  {
+   "id": 77,
+   "name": "Intermittent Wi-Fi disconnections and slow speeds",
+   "description": "Customers report recurring Wi-Fi drops, inability to reconnect, weak or unreliable connections, latency, and very slow speeds across one or more networks. The cluster is distinguished by ongoing connection instability rather than post-reinstallation driver setup or hardware replacement.",
+   "size": 9,
+   "coherence": "high"
+  },
+  {
+   "id": 111,
+   "name": "Recover BitLocker key after hardware change",
+   "description": "Customers mainly need to locate or use a BitLocker recovery key to unlock the computer, especially after a system board or motherboard replacement. A few requests involve keyboard or USB input problems during recovery, with one unrelated activation-key outlier.",
+   "size": 9,
+   "coherence": "medium"
+  },
+  {
+   "id": 32,
+   "name": "Transfer to correct support department",
+   "description": "Customers request transfers to Premier, technical, gaming, specialized, human resources, or language-specific support teams, including after a prior transfer was disconnected. The defining issue is being routed from the current interaction to another department.",
+   "size": 8,
+   "coherence": "medium"
+  },
+  {
+   "id": 50,
+   "name": "Post-expiration warranty coverage questions",
+   "description": "Customers ask whether repairs remain covered after expiration, what basic coverage includes, and whether coverage or eligibility is current. This cluster centers on interpreting coverage around expiration, rather than correcting records or arranging a repair.",
+   "size": 8,
+   "coherence": "medium"
+  },
+  {
+   "id": 83,
+   "name": "System board replacement and repair support",
+   "description": "Customers seek replacement or warranty assistance for failed internal components, especially motherboards, and help after board repair. This differs from general out-of-warranty repair and no-boot service through its focus on component or system-board replacement.",
+   "size": 8,
+   "coherence": "medium"
+  },
+  {
+   "id": 87,
+   "name": "Defective device replacement or trade-in",
+   "description": "Customers seek to return faulty devices for a replacement or refund, compare replacement prices, or obtain trade-in credit. It differs from the broader purchase-return cluster by emphasizing defective-device resolution and replacement value, with one unrelated software request.",
+   "size": 8,
+   "coherence": "medium"
+  },
+  {
+   "id": 27,
+   "name": "Change or cancel repair service type",
+   "description": "Customers want to switch between onsite, depot, or local authorized service, or cancel an existing repair request. The defining issue is changing the repair fulfillment method or service case status.",
+   "size": 8,
+   "coherence": "high"
+  },
+  {
+   "id": 23,
+   "name": "Track repair shipment deliveries",
+   "description": "Customers ask where repair boxes, labels, recovery media, return materials, replacement devices, or related communications are in the delivery process. This cluster focuses on shipment tracking and delivery status rather than preparing or resending materials.",
+   "size": 8,
+   "coherence": "medium"
+  },
+  {
+   "id": 28,
+   "name": "Obtain and prepare repair shipping materials",
+   "description": "Customers need a repair box, label, shipping address, or replacement shipping materials, or ask how to package the computer and what accessories to include. This differs from cluster 23 by focusing on obtaining and preparing materials rather than tracking delivery.",
+   "size": 8,
+   "coherence": "high"
+  },
+  {
+   "id": 71,
+   "name": "Physically damaged keyboard needs replacement",
+   "description": "Customers primarily seek repair or replacement for a broken or damaged keyboard, often requesting onsite service or a replacement keyboard assembly. One request concerns restoring keyboard-language switching, but the dominant driver is physical repair or replacement.",
+   "size": 8,
+   "coherence": "high"
+  },
+  {
+   "id": 70,
+   "name": "Complete keyboard failure and replacement options",
+   "description": "Customers report a keyboard that has broadly or completely stopped working, sometimes after a repair, update, or screen replacement, and may need a replacement or compatible alternative. This is broader than individual unresponsive keys and is distinct from requests centered on physical damage.",
+   "size": 8,
+   "coherence": "medium"
+  },
+  {
+   "id": 115,
+   "name": "Keyboard diagnosis, power, and connection issues",
+   "description": "Customers report varied keyboard hardware and connectivity problems, including no typing despite lights, charging or power failures, RGB behavior, recovery-environment issues, and suspected heat damage. The cluster combines several diagnostic scenarios rather than one narrowly defined keyboard failure.",
+   "size": 8,
+   "coherence": "low"
+  },
+  {
+   "id": 68,
+   "name": "Laptop USB-C port hardware failures",
+   "description": "Customers report USB-C, Thunderbolt, or related laptop ports failing to charge, carry display output, or recognize connected devices. These are laptop port or controller problems, rather than failures of the docking station itself.",
+   "size": 8,
+   "coherence": "high"
+  },
+  {
+   "id": 40,
+   "name": "AC adapter or charging cable not working",
+   "description": "Customers report that the charger, adapter, or charging cable does not supply power, sometimes only working when positioned a certain way. This differs from battery-focused issues because the suspected failure is in the external charging equipment.",
+   "size": 8,
+   "coherence": "high"
+  },
+  {
+   "id": 93,
+   "name": "Boot-time recovery and restart loops",
+   "description": "Customers report systems repeatedly shutting down, restarting, or getting stuck at the manufacturer logo or automatic repair process. The cluster is distinguished by failed startup and recovery sequences rather than isolated crashes during normal use.",
+   "size": 8,
+   "coherence": "high"
+  },
+  {
+   "id": 22,
+   "name": "Replacement or upgrade Wi-Fi hardware",
+   "description": "Customers want to purchase, replace, upgrade, or return physical Wi-Fi or network-card hardware, including compatibility questions. This concerns the wireless component itself rather than installing drivers or troubleshooting connection drops.",
+   "size": 8,
+   "coherence": "medium"
+  },
+  {
+   "id": 8,
+   "name": "Printer installation and printing problems",
+   "description": "Most customers need help installing printers or drivers, connecting network printers, resolving print errors, or fixing scanning and printed-output issues. PDF annotation and Quicken display problems are unrelated software outliers.",
+   "size": 8,
+   "coherence": "medium"
+  },
+  {
+   "id": 5,
+   "name": "Back up or restore personal files",
+   "description": "Customers ask how to preserve, recover, or restore personal files before repairs, resets, or operating system changes, or report that files are missing. This differs from Cluster 105, which focuses on data recovery from a failed hard drive, and Cluster 6, which focuses on recovery media.",
+   "size": 8,
+   "coherence": "high"
+  },
+  {
+   "id": 3,
+   "name": "Scam security pop-ups and antivirus removal",
+   "description": "Customers call about alarming fake security warnings, persistent scam pop-ups, or antivirus software that is blocking the computer or repeatedly prompting. This differs from the other clusters because the focus is malware-like alerts and unwanted security software rather than account, operating system, or productivity software access.",
+   "size": 8,
+   "coherence": "high"
+  },
+  {
+   "id": 2,
+   "name": "Set up and register a new computer",
+   "description": "Customers seek help getting a newly purchased computer ready for personal use, including initial setup and product registration. This differs from factory-reset requests because the goal is configuring a new device rather than restoring it.",
+   "size": 8,
+   "coherence": "medium"
+  },
+  {
+   "id": 86,
+   "name": "Replace laptop after repeated repair failures",
+   "description": "Customers seek replacement or refund after multiple unsuccessful repairs, recurring shutdowns, crashes, or unresolved hardware problems. The defining factor is repeated repair failure rather than simply preferring replacement for a new or unrepaired device.",
+   "size": 7,
+   "coherence": "high"
+  },
+  {
+   "id": 30,
+   "name": "Escalate unresolved repair or warranty case",
+   "description": "Customers primarily want a supervisor or senior manager to address unresolved repair or warranty concerns. A few requests involve contacting a prior representative, obtaining a customer number, or purchasing software support.",
+   "size": 7,
+   "coherence": "medium"
+  },
+  {
+   "id": 69,
+   "name": "Keyboard backlight failure and settings",
+   "description": "Customers report keyboard lighting that does not work, is uneven, or stops intermittently, and ask how to adjust brightness or color. All requests concern keyboard backlight operation or configuration rather than general keyboard key failures.",
+   "size": 7,
+   "coherence": "high"
+  },
+  {
+   "id": 66,
+   "name": "Dock monitor and power dropouts",
+   "description": "Customers report a dock intermittently or consistently failing to detect monitors, provide adequate laptop power, or maintain charging and display connections. One request mentions phantom inputs, but most concern display and power behavior through a dock.",
+   "size": 7,
+   "coherence": "high"
+  },
+  {
+   "id": 117,
+   "name": "Bluetooth headphones or speakers lack audio",
+   "description": "Customers report Bluetooth audio devices that fail to connect, disconnect, power on, or produce sound. Most requests concern wireless headphones or speakers, distinguishing this cluster from general speaker output and microphone issues.",
+   "size": 7,
+   "coherence": "medium"
+  },
+  {
+   "id": 82,
+   "name": "Hinge-related screen detachment damage",
+   "description": "Customers report hinge damage accompanied by a detached, cracked, or nonresponsive screen, or separation between the display and the laptop base. This cluster is distinct from hinge-only repairs because the hinge failure has caused broader screen or casing separation.",
+   "size": 7,
+   "coherence": "high"
+  },
+  {
+   "id": 78,
+   "name": "Severe laptop slowness and lag",
+   "description": "Customers call about very slow booting, browsing, application use, downloads, or overall system performance, sometimes worsening after extended use or software changes. Most requests concern broad laptop slowness, with a few focused specifically on internet download speed.",
+   "size": 7,
+   "coherence": "medium"
+  },
+  {
+   "id": 64,
+   "name": "Loud fan and general overheating",
+   "description": "Customers call about excessively loud fan operation, device heat, and sometimes reduced performance during normal use. Unlike the other fan clusters, these requests generally seek diagnosis of noisy or hot operation without a clearly reported fan failure or mechanical buzzing.",
+   "size": 7,
+   "coherence": "high"
+  },
+  {
+   "id": 37,
+   "name": "Power failure after prior repair",
+   "description": "Customers say the laptop still will not power on or work after a depot, warranty, or other prior repair. The defining feature is recurrence or persistence of the problem following repair service.",
+   "size": 7,
+   "coherence": "high"
+  },
+  {
+   "id": 105,
+   "name": "Recover or replace failed hard drive",
+   "description": "Customers report a crashed or inaccessible hard drive and ask about recovering files, replacing the drive, or obtaining related recovery information. This cluster is centered on hard-drive failure and non-booting systems rather than routine backup or creating recovery media.",
+   "size": 7,
+   "coherence": "high"
+  },
+  {
+   "id": 92,
+   "name": "Storage drive and memory not detected",
+   "description": "Customers report startup or usability problems caused by undetected storage drives or incorrect or unavailable memory. This differs from Cluster 17 because these calls concern hardware detection and memory behavior rather than upgrade compatibility or feature guidance.",
+   "size": 7,
+   "coherence": "medium"
+  },
+  {
+   "id": 110,
+   "name": "Operating system activation, edition, and S mode",
+   "description": "Customers need help with operating system activation, missing or incorrect edition licenses, identifying the original license, or leaving restricted S mode. This differs from the update cluster because the issue is licensing or software restrictions after or independent of updating.",
+   "size": 7,
+   "coherence": "high"
+  },
+  {
+   "id": 47,
+   "name": "Activate or manage warranty renewal",
+   "description": "Customers report problems activating, reinstating, or registering purchased or renewed warranty coverage, along with a renewal payment page or auto-renewal request. This differs from status inquiries because the customer needs an activation or account-management action.",
+   "size": 6,
+   "coherence": "high"
+  },
+  {
+   "id": 48,
+   "name": "Warranty extension pricing and terms",
+   "description": "Customers ask about the cost, payment terms, validity period, reinstatement fees, and recognition of warranty extensions or upgrades. The defining issue is purchasing or reinstating additional coverage.",
+   "size": 6,
+   "coherence": "high"
+  },
+  {
+   "id": 51,
+   "name": "Warranty repair eligibility and charges",
+   "description": "Customers seek to confirm that a repair is covered, whether diagnostic or labor charges apply, what information is needed, or how to start a warranty repair. This cluster focuses on initiating and validating a repair under existing coverage.",
+   "size": 6,
+   "coherence": "high"
+  },
+  {
+   "id": 98,
+   "name": "Check coverage for accidental damage repairs",
+   "description": "Customers ask whether repairs are covered after drops, liquid damage, severe physical damage, hacking, crashes, or other specific incidents. The defining feature is coverage for damage or an incident rather than routine warranty status.",
+   "size": 6,
+   "coherence": "high"
+  },
+  {
+   "id": 20,
+   "name": "Replace recently purchased laptop",
+   "description": "Customers ask to replace a newly purchased or malfunctioning laptop, obtain a newer replacement, or address a physical defect present since purchase. These requests focus on replacement of a recent purchase, including purchases from a retailer, rather than failed warranty repairs.",
+   "size": 6,
+   "coherence": "high"
+  },
+  {
+   "id": 34,
+   "name": "Find authorized local repair provider",
+   "description": "Customers seek a nearby authorized repair center or want to arrange covered service through a local provider. Some also ask about repair estimates or reimbursement for local repairs, distinguishing this cluster from requests to replace the computer or correct its identifiers.",
+   "size": 6,
+   "coherence": "high"
+  },
+  {
+   "id": 91,
+   "name": "Update customer account contact information",
+   "description": "Customers primarily request changes to account details such as address, phone number, or email. A few requests concern email administration, server alerts, or obtaining a repair shipping label, making this cluster less focused.",
+   "size": 6,
+   "coherence": "medium"
+  },
+  {
+   "id": 29,
+   "name": "Follow up on existing support case",
+   "description": "Customers seek assistance or callbacks for an already opened support, repair, or order case. This is broader than the technician-specific coordination in cluster 89 and less focused on status tracking than cluster 26.",
+   "size": 6,
+   "coherence": "medium"
+  },
+  {
+   "id": 25,
+   "name": "Existing repair status and technician scheduling",
+   "description": "Customers primarily want updates on an open repair or replacement case, including technician visit timing and delivery status. This cluster is more narrowly focused on monitoring and scheduling already-created repair cases.",
+   "size": 6,
+   "coherence": "high"
+  },
+  {
+   "id": 102,
+   "name": "Device will not power on or charge",
+   "description": "Customers report Chromebooks, laptops, or a tablet that will not turn on, show charging, or respond after charging and reset attempts. The cluster is focused on complete power or charging failure rather than battery runtime.",
+   "size": 6,
+   "coherence": "high"
+  },
+  {
+   "id": 38,
+   "name": "Sudden shutdown and power failure",
+   "description": "Customers report that the laptop suddenly stopped working, shut down, or became unable to power on, including after an update or before reaching network access. The cluster is distinguished by the sudden onset or shutdown context rather than a persistent no-indicator condition.",
+   "size": 6,
+   "coherence": "high"
+  },
+  {
+   "id": 103,
+   "name": "Charging failure despite replacement chargers",
+   "description": "Customers report that the computer does not recognize chargers, show a charging indicator, charge the battery, or power on even after trying multiple or replacement chargers. It is broader than the other charging clusters and includes a tablet charging issue.",
+   "size": 6,
+   "coherence": "medium"
+  },
+  {
+   "id": 16,
+   "name": "Sleep, wake, or unexpected power cycling",
+   "description": "Customers report problems entering sleep, waking from sleep, or unexpectedly waking and powering on. This differs from general crashes because the issue is tied specifically to sleep and lid-close behavior.",
+   "size": 6,
+   "coherence": "high"
+  },
+  {
+   "id": 55,
+   "name": "Black screen triggered by login, movement, or video",
+   "description": "Customers report the display going black after Windows appears, immediately after login, when the lid or display is moved, or while video applications are open. These are usage- or transition-triggered blackouts rather than a continuously blank screen or primarily power-related failure.",
+   "size": 6,
+   "coherence": "high"
+  },
+  {
+   "id": 75,
+   "name": "Wi-Fi driver installation after Windows reinstall",
+   "description": "Customers need to restore Wi-Fi or install the wireless driver after reinstalling or clean-installing Windows, often without an active internet connection. These requests focus on driver availability and setup rather than defective hardware or intermittent connectivity.",
+   "size": 6,
+   "coherence": "high"
+  },
+  {
+   "id": 6,
+   "name": "Create or obtain Windows recovery media",
+   "description": "Customers need a Windows recovery USB or factory recovery image, or encounter errors while creating or using recovery media to reinstall the operating system. Unlike Cluster 105, the main issue is the recovery media or reinstallation process, not a failed hard drive.",
+   "size": 6,
+   "coherence": "high"
+  },
+  {
+   "id": 62,
+   "name": "Screen brightness controls not working",
+   "description": "Customers report that the display stays dim, changes brightness incorrectly, or ignores brightness-key and monitor controls. This cluster focuses specifically on malfunctioning brightness adjustment rather than general display problems.",
+   "size": 5,
+   "coherence": "high"
+  },
+  {
+   "id": 31,
+   "name": "Language-specific support connection requests",
+   "description": "Customers ask to connect with support or sales representatives speaking French, Spanish, or English, with one broader software-support connection request. This concerns reaching an appropriate language or support line, rather than transferring an active call between departments.",
+   "size": 5,
+   "coherence": "medium"
+  },
+  {
+   "id": 90,
+   "name": "Support phone number or eligibility information",
+   "description": "Customers seek the correct support phone number, phone menu, or confirmation that they qualify for a support service, with one request to reconnect to a prior representative. This cluster is primarily about finding or validating the right access route rather than requesting an active department transfer.",
+   "size": 5,
+   "coherence": "high"
+  },
+  {
+   "id": 99,
+   "name": "Purchase additional warranty coverage",
+   "description": "Customers want to buy an extended or upgraded warranty for one or more devices, often while limited coverage remains. This cluster focuses on purchasing added protection rather than checking status or resolving activation problems.",
+   "size": 5,
+   "coherence": "high"
+  },
+  {
+   "id": 52,
+   "name": "Warranty duration, region, and hardware coverage",
+   "description": "Customers ask about warranty length, coverage by purchase region, and whether hardware problems such as power or charging failures are covered. It is distinguished by questions about geographic scope, duration, and basic hardware-failure eligibility.",
+   "size": 5,
+   "coherence": "high"
+  },
+  {
+   "id": 18,
+   "name": "Out-of-warranty repair options",
+   "description": "Customers ask about paid repair availability, costs, or warranty-status corrections for computers outside coverage. This cluster is defined by repair eligibility after warranty expiration rather than a specific hardware symptom.",
+   "size": 5,
+   "coherence": "high"
+  },
+  {
+   "id": 84,
+   "name": "No-boot or no-power repair service",
+   "description": "Customers need repair for laptops or desktops that will not boot, start, or turn on, usually under warranty. It is distinguished from other repair clusters by the prominent no-start symptom.",
+   "size": 5,
+   "coherence": "high"
+  },
+  {
+   "id": 89,
+   "name": "Coordinate onsite technician repair",
+   "description": "Customers call about missed technician callbacks, rescheduling appointments, restarting technician work, or understanding closure of an onsite repair case. The defining feature is direct coordination with a field technician or onsite work order.",
+   "size": 5,
+   "coherence": "high"
+  },
+  {
+   "id": 63,
+   "name": "Fan failure causing overheating and shutdown",
+   "description": "Customers report extreme CPU overheating, fan failure alerts or nonfunctioning fans, severe slowdown, and unexpected shutdowns. This cluster centers on critical thermal failure rather than ordinary fan noise.",
+   "size": 5,
+   "coherence": "high"
+  },
+  {
+   "id": 104,
+   "name": "Fan buzzing or rattling needing repair",
+   "description": "Customers report unusual buzzing or rattling from the fan and often ask for expedited repair or warranty coverage. A few requests involve fan errors, overheating, crashes, or failure to boot, making this somewhat broader than the primary noise complaint.",
+   "size": 5,
+   "coherence": "medium"
+  },
+  {
+   "id": 58,
+   "name": "Desktop powers on with no display",
+   "description": "Customers report a desktop or all-in-one that powers on but produces no monitor image or video signal, sometimes with beeps or a black screen. This cluster focuses on complete loss of video output rather than display distortion or intermittent blackouts.",
+   "size": 5,
+   "coherence": "high"
+  },
+  {
+   "id": 100,
+   "name": "Intermittent black screen tied to power or startup",
+   "description": "Customers report black screens that recur depending on charger connection, unplugging, startup errors, or similar power-related conditions. This differs from blackouts triggered by login, opening or rotating the display, or video applications.",
+   "size": 5,
+   "coherence": "medium"
+  },
+  {
+   "id": 114,
+   "name": "Internet connectivity stopped or unavailable",
+   "description": "Customers report that the laptop cannot access the internet through Wi-Fi or Ethernet, including cases where Wi-Fi appears to work. This is a broad internet-access problem rather than a request focused on connecting to a particular network or fixing the wireless adapter.",
+   "size": 5,
+   "coherence": "high"
+  },
+  {
+   "id": 109,
+   "name": "Tablet locked by forgotten PIN or account",
+   "description": "Customers cannot access a tablet because of a forgotten PIN, a previous owner's account, or a lock triggered after resetting the device. The stolen-device tracking request is an outlier, but most requests concern tablet access and account locks.",
+   "size": 5,
+   "coherence": "medium"
+  },
+  {
+   "id": 9,
+   "name": "Recover or reinstall Windows without BitLocker key",
+   "description": "Customers are trying to regain access, recover files, reset the laptop, or reinstall Windows when the BitLocker recovery key is unavailable. This is distinct from recurring BitLocker prompts and from key retrieval tied to hardware replacement.",
+   "size": 5,
+   "coherence": "high"
+  },
+  {
+   "id": 96,
+   "name": "Check accidental damage warranty coverage",
+   "description": "Customers ask whether accidental physical damage, battery issues, or device replacement are covered, or whether an accidental coverage purchase is active. The defining topic is the scope and status of accidental damage protection.",
+   "size": 4,
+   "coherence": "high"
+  },
+  {
+   "id": 94,
+   "name": "Repair logistics after warranty purchase",
+   "description": "Customers ask about repair return shipping, diagnostic fee treatment, or canceling a repair after obtaining or using warranty coverage. It differs by focusing on the practical handling of a repair after a warranty purchase or repair request, rather than initial coverage verification.",
+   "size": 4,
+   "coherence": "medium"
+  },
+  {
+   "id": 97,
+   "name": "Verify warranty coverage and recurring charges",
+   "description": "Customers want to validate warranty status, reconcile conflicting coverage information, or understand a recurring service payment. It differs from general warranty-status questions through its emphasis on discrepancies and billing-related coverage.",
+   "size": 4,
+   "coherence": "medium"
+  },
+  {
+   "id": 112,
+   "name": "External display cable or port failure",
+   "description": "Customers report missing video or a failed cable or display port when connecting a monitor or television. It is distinct from the broader monitor setup cluster because these requests focus on a nonworking connection, with one unrelated screenshot request as an outlier.",
+   "size": 4,
+   "coherence": "medium"
+  },
+  {
+   "id": 85,
+   "name": "Replacement motherboard installation defects",
+   "description": "Customers report problems with replacement system boards, such as failed memory slots, undetected graphics hardware, short risers, or damage causing no power. This cluster concerns replacement-board fit, compatibility, or component functionality rather than general motherboard failure.",
+   "size": 4,
+   "coherence": "high"
+  },
+  {
+   "id": 107,
+   "name": "Transfer files and programs to new computer",
+   "description": "Customers want to move files, applications, or software from an old computer to a new one. This differs from general new-computer setup because the main need is migration of existing data and programs.",
+   "size": 4,
+   "coherence": "high"
+  },
+  {
+   "id": 106,
+   "name": "Restore computer to factory settings",
+   "description": "Customers want to return a computer or tablet to its factory state, including after setup or login problems. This differs from new-computer setup because it involves resetting an existing configuration rather than establishing one.",
+   "size": 4,
+   "coherence": "high"
+  }
+ ]
+}
