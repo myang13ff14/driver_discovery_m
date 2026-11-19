@@ -1,7 +1,7 @@
 """Write a reviewed taxonomy as hierarchy.json + labels.json in exactly step 5's format.
 
 Used by the review app (app.py) and the Excel import (from_excel.py), so anything that reads
-step 5's output (the supervised step, the step 5 plots, the step 6 app) can read the reviewed version.
+step 5's output (the supervised step and the step 5 plots) can read the reviewed version.
 
 Categories are keyed "L3-33" (step 5's level and ID) or "L3-new-<anything>" (added in review).
 Step 5's integer IDs are kept; added categories get the next free ID at their level.

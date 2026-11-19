@@ -17,8 +17,6 @@ data/
 # results packaged for sharing
 to_colleague/
 
-# search app embedding cache (rebuilt automatically)
-step6_checkingapp/step1/result/embedding_cache.npz
 
 # Keep other generated results local
 **/result/

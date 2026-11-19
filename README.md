@@ -1,6 +1,6 @@
 # driver_discovery_m
 
-Call-driver discovery pipeline with unsupervised clustering, supervised classification, feedback tools, and a checking app.
+Call-driver discovery pipeline with unsupervised clustering, supervised classification, and feedback tools.
 
 See [doc/README.md](doc/README.md) for setup and pipeline documentation.
 
