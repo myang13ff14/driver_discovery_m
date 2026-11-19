@@ -1,0 +1,26 @@
+# secrets
+.env
+
+# environment and caches
+.venv/
+__pycache__/
+*.pyc
+
+# raw call transcripts (customer data, even de-identified)
+data/
+
+# editor / OS
+.vscode/
+.idea/
+.DS_Store
+
+# results packaged for sharing
+to_colleague/
+
+# search app embedding cache (rebuilt automatically)
+step6_checkingapp/step1/result/embedding_cache.npz
+
+# Keep transcript-derived caches and results local
+**/result/
+feedback/excel/
+unsupervised/figures/*.png

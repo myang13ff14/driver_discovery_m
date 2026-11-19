@@ -1,0 +1,690 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Call Driver Review</title>
+<style>
+  :root { --bg:#fff; --fg:#1d1d1f; --muted:#6e6e73; --line:#e3e3e8; --soft:#f5f5f7; --accent:#2f6fde; --ok:#1a7f37; --mark:#fff1a8; }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg:#161617; --fg:#ececf0; --muted:#9a9aa2; --line:#2c2c30; --soft:#1f1f22; --accent:#6c9bf0; --ok:#3fb950; --mark:#5c4d00; }
+  }
+  * { box-sizing:border-box; }
+  body { margin:0; font:14px/1.5 system-ui, sans-serif; background:var(--bg); color:var(--fg); height:100vh; display:flex; flex-direction:column; }
+  header { display:flex; align-items:center; gap:16px; padding:8px 16px; border-bottom:1px solid var(--line); flex-wrap:wrap; }
+  header h1 { font-size:15px; margin:0; }
+  header .grow { flex:1; }
+  .wrap { flex:1; display:flex; min-height:0; }
+  aside { width:330px; flex:none; border-right:1px solid var(--line); overflow:auto; padding:10px; }
+  main { flex:1; overflow:auto; padding:16px 24px; min-width:0; }
+  #edit { width:340px; flex:none; border-left:1px solid var(--line); overflow:auto; padding:14px; }
+  a { color:var(--accent); cursor:pointer; }
+  button { padding:5px 11px; border:1px solid var(--line); border-radius:7px; background:var(--soft); color:var(--fg); font:inherit; cursor:pointer; }
+  button.primary { background:var(--accent); border-color:var(--accent); color:#fff; }
+  button:disabled { opacity:.45; cursor:default; }
+  input, textarea, select { font:inherit; color:var(--fg); background:var(--bg); border:1px solid var(--line); border-radius:7px; padding:6px 8px; width:100%; }
+  textarea { min-height:110px; resize:vertical; }
+  label.f { display:block; color:var(--muted); font-size:12px; margin:12px 0 4px; }
+  .muted { color:var(--muted); }
+  .small { font-size:12px; }
+  .row { display:flex; gap:8px; align-items:center; margin-top:6px; }
+  details { margin-left:10px; }
+  summary { list-style:none; cursor:pointer; } summary::-webkit-details-marker { display:none; }
+  .node { display:flex; justify-content:space-between; gap:8px; padding:3px 6px; border-radius:6px; cursor:pointer; }
+  .node:hover { background:var(--soft); }
+  .node.sel { background:var(--accent); color:#fff; } .node.sel .cnt, .node.sel .lvl, .node.sel .ok { color:#fff; }
+  .lvl { color:var(--muted); font-size:11px; margin-right:4px; }
+  .cnt { color:var(--muted); font-size:12px; white-space:nowrap; }
+  .ok { color:var(--ok); font-weight:600; }
+  .crumb { color:var(--muted); font-size:12px; }
+  h2 { font-size:18px; margin:2px 0 6px; }
+  h3 { font-size:12px; text-transform:uppercase; letter-spacing:.04em; color:var(--muted); margin:20px 0 8px; }
+  .stats { display:flex; gap:28px; flex-wrap:wrap; margin:10px 0 4px; }
+  .stat b { display:block; font-size:21px; } .stat span { color:var(--muted); font-size:12px; }
+  table { border-collapse:collapse; width:100%; }
+  td { border-top:1px solid var(--line); padding:7px 8px; vertical-align:top; }
+  tr.go { cursor:pointer; } tr.go:hover td { background:var(--soft); }
+  .num { text-align:right; white-space:nowrap; width:1%; }
+  .sbar { width:120px; height:7px; background:var(--soft); border-radius:4px; overflow:hidden; margin-top:5px; }
+  .sbar i { display:block; height:100%; background:var(--accent); }
+  .req { border-top:1px solid var(--line); padding:8px 4px; display:flex; gap:10px; }
+  .req input { width:auto; margin-top:4px; }
+  .req .q { color:var(--muted); font-size:13px; font-style:italic; }
+  .tr { margin-top:6px; background:var(--soft); border-radius:8px; padding:8px 10px; font-size:13px; max-height:300px; overflow:auto; }
+  .tr div.hl { background:var(--mark); }
+  .log { font-size:12px; margin:0; padding-left:16px; } .log li { margin:3px 0; }
+  .badge { font-size:11px; border:1px solid var(--line); border-radius:10px; padding:0 7px; color:var(--muted); }
+  .badge.ok { border-color:var(--ok); color:var(--ok); }
+  .badge.ch { border-color:var(--accent); color:var(--accent); }
+  .views { display:flex; gap:2px; } .views button { border-radius:7px; background:none; border-color:transparent; }
+  .views button.on { background:var(--soft); border-color:var(--line); font-weight:600; }
+  body.result aside, body.result #edit, body.flow aside, body.table aside, body.table #edit, body.recluster aside, body.recluster #edit { display:none; }
+  .banner { background:var(--mark); border-radius:8px; padding:8px 12px; margin:8px 0; }
+  h4 { margin:16px 0 4px; font-size:14px; }
+  table.ed { border-collapse:collapse; width:100%; }
+  table.ed td { padding:3px 6px; border-top:1px solid var(--line); vertical-align:top; }
+  table.ed tr.a td { background:var(--soft); border-top:2px solid var(--line); }
+  table.ed tr.a input.nm, table.ed tr.t input.nm { font-weight:600; }
+  table.ed input, table.ed textarea, table.ed select { border-color:transparent; background:transparent; padding:4px 6px; }
+  table.ed input:hover, table.ed textarea:hover, table.ed select:hover { border-color:var(--line); }
+  table.ed input:focus, table.ed textarea:focus, table.ed select:focus { border-color:var(--accent); background:var(--bg); outline:none; }
+  table.ed textarea { min-height:0; height:auto; resize:vertical; field-sizing:content; }
+  table.ed .lv { font-size:11px; color:var(--muted); white-space:nowrap; padding-top:9px; }
+  table.ed .add td { border-top:none; padding:0 6px 6px; } table.ed .add a { font-size:12px; }
+  table.ed .x { border:none; background:none; color:var(--muted); font-size:15px; padding:4px 6px; }
+  table.ed .x:hover { color:#d1242f; }
+  /* flowchart: left-to-right tree drawn with CSS connectors */
+  .fc .branch { display:flex; align-items:flex-start; }
+  .fc .kids { display:flex; flex-direction:column; padding-left:28px; position:relative; }
+  .fc .kids > * { position:relative; padding:4px 0; }
+  .fc .kids > *::before { content:''; position:absolute; left:-28px; top:22px; width:28px; border-top:2px solid var(--line); }
+  .fc .kids > *::after { content:''; position:absolute; left:-28px; top:0; bottom:0; border-left:2px solid var(--line); }
+  .fc .kids > *:first-child::after { top:22px; } .fc .kids > *:last-child::after { bottom:auto; height:22px; }
+  .fc .kids > *:only-child::after { display:none; }
+  .box { border:1.5px solid var(--line); border-radius:9px; padding:6px 10px; background:var(--bg); cursor:pointer; width:250px; min-height:36px;
+         display:flex; gap:6px; align-items:center; margin-right:0; }
+  .box.L1 { background:var(--soft); font-weight:600; width:220px; } .box.L2 { font-weight:600; } .box.L3 { width:320px; font-size:13px; }
+  .box:hover { border-color:var(--accent); } .box.sel { border-color:var(--accent); box-shadow:0 0 0 2px var(--accent); }
+  .box.drop { border-style:dashed; border-color:var(--accent); background:var(--soft); }
+  .box .nm { flex:1; min-width:0; } .box .cnt { margin-left:auto; }
+  .box .acts { display:none; gap:2px; } .box:hover .acts, .box.sel .acts { display:flex; }
+  .box .acts button, .box .car { padding:0 6px; font-size:13px; line-height:20px; border-radius:5px; }
+  .box .car { border:none; background:none; color:var(--muted); cursor:pointer; padding:0 2px; }
+  .modal-bg { position:fixed; inset:0; background:rgba(0,0,0,.35); display:flex; align-items:center; justify-content:center; z-index:10; }
+  .modal { background:var(--bg); border:1px solid var(--line); border-radius:12px; padding:18px 20px; width:440px; max-width:92vw; }
+  .modal h2 { margin-top:0; } .modal .opt { border:1px solid var(--line); border-radius:8px; padding:10px 12px; margin-top:10px; }
+  .res td { padding:5px 8px; } .res tr.l1 td { background:var(--soft); font-weight:600; }
+  .res tr.l2 td:first-child { padding-left:22px; font-weight:600; } .res tr.l3 td:first-child { padding-left:44px; }
+  .up { color:var(--ok); } .down { color:#d1242f; }
+  .ba b { font-size:21px; display:inline; } .ba .arrow { color:var(--muted); margin:0 4px; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Call driver review</h1>
+  <nav class="views"><button data-view="table" class="on">Table</button><button data-view="review">Review</button><button data-view="flow">Flowchart</button><button data-view="result">Result</button><button data-view="recluster">Recluster</button></nav>
+  <span id="progress" class="muted small"></span>
+  <button id="revall"></button>
+  <span class="grow"></span>
+  <span id="save" class="muted small"></span>
+  <button id="undo" title="Undo (Ctrl+Z)">↶ Undo</button>
+  <a id="reset" class="small">Start over</a>
+</header>
+<div class="wrap">
+  <aside>
+    <input id="find" type="search" placeholder="Find a category…">
+    <div id="tree" style="margin-top:8px"></div>
+  </aside>
+  <main id="main"></main>
+  <section id="edit"></section>
+</div>
+<script>
+let SRC, S, sel = null, undoStack = [], saveTimer = null, view = 'table', onlyChanged = false;
+const $ = id => document.getElementById(id);
+const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const pct = (a, b) => b ? (100 * a / b).toFixed(1) + '%' : '–';
+const LABEL = { L1: 'Business area', L2: 'Topic', L3: 'Call driver' };
+
+// ---------- derived data ----------
+const cat = k => S.categories[k];
+const live = lv => Object.keys(S.categories).filter(k => !cat(k).merged_into && !cat(k).removed && (!lv || cat(k).level === lv));
+function sizes() {
+  const n = {};
+  for (const k of live()) n[k] = 0;
+  for (const l3 of Object.values(S.assign)) for (let k = l3; k; k = cat(k).parent) n[k]++;
+  return n;
+}
+const kids = (k, n) => live().filter(c => cat(c).parent === k).sort((a, b) => n[b] - n[a]);
+const path = k => { const p = []; for (let x = cat(k).parent; x; x = cat(x).parent) p.unshift(x); return p; };
+const reqsIn = k => SRC.requests.filter(r => S.assign[r.key] === k);
+// requests in a driver; the ones the clustering did not group are left out of everything downstream
+const inDrivers = () => Object.values(S.assign).filter(Boolean).length;
+
+// ---------- editing: every change goes through edit(), so it can be undone and is saved ----------
+function edit(text, fn, quiet) {
+  undoStack.push(JSON.stringify(S));
+  fn();
+  S.log.unshift({ t: new Date().toISOString(), text });
+  save();
+  quiet ? renderHeader() : render();  // quiet: a text edit in the table, which is already on screen
+}
+function undo() {
+  if (!undoStack.length) return;
+  S = JSON.parse(undoStack.pop());
+  if (sel && (!cat(sel) || cat(sel).merged_into || cat(sel).removed)) sel = null;
+  save(); render();
+}
+function save() {
+  $('save').textContent = 'Saving…';
+  clearTimeout(saveTimer);
+  saveTimer = setTimeout(saveNow, 300);
+}
+async function saveNow() {
+  clearTimeout(saveTimer);
+  try {
+    const r = await fetch('/api/state', { method: 'POST', body: JSON.stringify(S) });
+    $('save').textContent = r.ok ? `Saved ${new Date().toLocaleTimeString()}` : 'Save failed';
+    return r.ok;
+  } catch { $('save').textContent = 'Save failed (is the app running?)'; return false; }
+}
+
+// ---------- left: tree ----------
+function render() {
+  document.body.classList.toggle('result', view === 'result');
+  document.body.classList.toggle('flow', view === 'flow');
+  document.body.classList.toggle('table', view === 'table');
+  document.body.classList.toggle('recluster', view === 'recluster');
+  document.querySelectorAll('.views button').forEach(b => b.classList.toggle('on', b.dataset.view === view));
+  renderHeader();
+  if (view === 'result') return renderResult();
+  if (view === 'flow') { renderFlow(); renderEdit(); return; }
+  if (view === 'table') return renderTable();
+  if (view === 'recluster') return renderRecluster();
+  renderTree(); renderMain(); renderEdit();
+}
+
+function renderHeader() {
+  const rev = lv => live(lv).filter(k => cat(k).reviewed).length;
+  $('progress').textContent = `Reviewed: ${rev('L1')}/${live('L1').length} areas · ${rev('L2')}/${live('L2').length} topics · `
+    + `${rev('L3')}/${live('L3').length} drivers · ${S.log.length} edits`;
+  $('undo').disabled = !undoStack.length;
+  const all = live().every(k => cat(k).reviewed);
+  $('revall').textContent = all ? 'Unmark all reviewed' : 'Mark all reviewed';
+}
+$('revall').onclick = () => {
+  const ks = live(), all = ks.every(k => cat(k).reviewed);
+  if (!confirm(all ? `Unmark all ${ks.length} categories?` : `Mark all ${ks.length} categories (areas, topics and drivers) as reviewed? You can undo this.`)) return;
+  edit(all ? `Unmarked all ${ks.length} categories` : `Marked all ${ks.length} categories as reviewed`,
+       () => ks.forEach(k => { cat(k).reviewed = !all; }));
+};
+document.querySelector('.views').onclick = e => {
+  const b = e.target.closest('button');
+  if (b) { view = b.dataset.view; render(); $('main').scrollTop = 0; }
+};
+
+function renderTree() {
+  const n = sizes(), f = $('find').value.trim().toLowerCase();
+  const hit = k => !f || cat(k).name.toLowerCase().includes(f) || kids(k, n).some(hit);
+  const node = k => `<div class="node${sel === k ? ' sel' : ''}" data-k="${k}">
+      <span><span class="lvl">${cat(k).level}</span>${esc(cat(k).name)}${cat(k).reviewed ? ' <span class="ok" title="Reviewed">✓</span>' : ''}</span>
+      <span class="cnt">${n[k]}</span></div>`;
+  const open = k => f || sel === k || (sel && path(sel).includes(k));
+  $('tree').innerHTML = `
+    <div class="node${sel === null ? ' sel' : ''}" data-k=""><span>Overview</span><span class="cnt">${inDrivers()}</span></div>
+    ${kids(null, n).filter(hit).map(l1 => `
+      <details ${open(l1) || !sel ? 'open' : ''}><summary>${node(l1)}</summary>
+        ${kids(l1, n).filter(hit).map(l2 => `
+          <details ${open(l2) ? 'open' : ''}><summary>${node(l2)}</summary>
+            ${kids(l2, n).filter(hit).map(l3 => `<div style="margin-left:10px">${node(l3)}</div>`).join('')}
+          </details>`).join('')}
+      </details>`).join('')}`;
+}
+$('tree').onclick = e => {
+  const nd = e.target.closest('.node');
+  if (!nd) return;
+  e.preventDefault();
+  select(nd.dataset.k || null);
+};
+$('find').oninput = renderTree;
+function select(k) { sel = k; render(); if (view === 'review') $('main').scrollTop = 0; }
+
+// ---------- center: what the cluster contains ----------
+function renderMain() {
+  const n = sizes();
+  if (sel === null) return renderOverview(n);
+  if (cat(sel).level === 'L3') return renderRequests(n);
+  const c = cat(sel), ch = kids(sel, n);
+  $('main').innerHTML = `${crumb(sel)}
+    <h2>${esc(c.name)}</h2><p>${esc(c.description)}</p>
+    <div class="stats"><div class="stat"><b>${n[sel]}</b><span>requests</span></div>
+      <div class="stat"><b>${pct(n[sel], inDrivers())}</b><span>of requests in drivers</span></div>
+      <div class="stat"><b>${ch.length}</b><span>${LABEL[c.level === 'L1' ? 'L2' : 'L3'].toLowerCase()}s</span></div></div>
+    <h3>${LABEL[c.level === 'L1' ? 'L2' : 'L3']}s</h3>${childTable(ch, n, n[sel])}`;
+}
+
+function renderOverview(n) {
+  const l1 = kids(null, n);
+  $('main').innerHTML = `<h2>Overview</h2>
+    <p class="muted">Call drivers found automatically from customer requests. Pick a category to see its requests and edit it.
+      Requests the clustering did not group (${SRC.unclustered}) are left out.</p>
+    <div class="stats"><div class="stat"><b>${inDrivers()}</b><span>requests in drivers</span></div>
+      <div class="stat"><b>${live('L1').length} · ${live('L2').length} · ${live('L3').length}</b><span>areas · topics · drivers</span></div></div>
+    <h3>Business areas</h3>${childTable(l1, n, inDrivers())}
+    <h3>Recent edits</h3>${S.log.length ? `<ul class="log">${S.log.slice(0, 15).map(x =>
+      `<li>${esc(x.text)} <span class="muted">· ${new Date(x.t).toLocaleString()}</span></li>`).join('')}</ul>` : '<p class="muted small">No edits yet.</p>'}`;
+}
+
+function childTable(ch, n, base) {
+  const top = Math.max(1, ...ch.map(k => n[k]));
+  return `<table>${ch.map(k => `<tr class="go" data-k="${k}">
+    <td><b>${esc(cat(k).name)}</b> ${cat(k).reviewed ? '<span class="badge ok">✓ reviewed</span>' : ''}
+      <div class="muted small">${esc(cat(k).description)}</div></td>
+    <td class="num"><b>${n[k]}</b> <span class="muted small">${pct(n[k], base)}</span>
+      <div class="sbar"><i style="width:${100 * n[k] / top}%"></i></div></td></tr>`).join('')}</table>`;
+}
+
+const crumb = k => `<div class="crumb">${path(k).map(p => `<a data-k="${p}">${esc(cat(p).name)}</a>`).join(' › ')}${path(k).length ? ' ›' : ''}</div>`;
+
+// a new driver starts like an automatic one, without a coherence rating; used inside edit() so Undo removes it
+function newCategory(level, name, description, parent) {
+  const key = `${level}-new-${Date.now()}`;
+  S.categories[key] = { level, name, description, parent, reviewed: false, merged_into: null, coherence: null };
+  return key;
+}
+const newDriver = (name, description, parent) => newCategory('L3', name, description, parent);
+function doMerge(from, to) {
+  const n = sizes(), c = cat(from), t = cat(to);
+  edit(`Merged “${c.name}” (${n[from]} requests) into “${t.name}” (${n[to]} requests)`, () => {
+    if (c.level === 'L3') for (const k in S.assign) { if (S.assign[k] === from) S.assign[k] = to; }
+    else for (const k of live()) { if (cat(k).parent === from) cat(k).parent = to; }
+    c.merged_into = to;
+  });
+}
+// remove a category and everything under it; requests of removed drivers are left out
+function doRemove(k) {
+  const n = sizes(), c = cat(k);
+  const below = x => [x, ...live().filter(y => cat(y).parent === x).flatMap(below)];
+  const all = below(k), sub = all.length - 1;
+  edit(`Removed “${c.name}”${sub ? ` and the ${sub} categories under it` : ''}${n[k] ? ` (${n[k]} requests left out)` : ''}`, () => {
+    for (const r in S.assign) { if (all.includes(S.assign[r])) S.assign[r] = null; }
+    all.forEach(x => { cat(x).removed = true; });
+  });
+  if (all.includes(sel)) sel = null;
+}
+function doMove(k, parent) {
+  const c = cat(k);
+  edit(`Moved “${c.name}” from “${cat(c.parent).name}” to “${cat(parent).name}”`, () => { c.parent = parent; });
+}
+const UP = { L2: 'L1', L3: 'L2' };
+function removeConfirm(k) {
+  const n = sizes(), sub = kids(k, n);
+  return confirm(`Remove “${cat(k).name}”?` + (sub.length ? `\n\nIts ${sub.length} ${LABEL[CHILD[cat(k).level]].toLowerCase()}s are removed too.` : '')
+    + (n[k] ? `\n${n[k]} requests are left out (the supervised step assigns requests to the remaining categories).` : '')
+    + '\n\nYou can undo this.');
+}
+function renderRequests(n) {
+  const rs = reqsIn(sel), c = cat(sel);
+  $('main').innerHTML = `${crumb(sel)}
+    <h2>${esc(c.name)}</h2>
+    <p>${esc(c.description)}</p>
+    <div class="stats"><div class="stat"><b>${rs.length}</b><span>requests</span></div>
+      <div class="stat"><b>${pct(rs.length, inDrivers())}</b><span>of requests in drivers</span></div>
+      ${c.coherence ? `<div class="stat"><b>${esc(c.coherence)}</b><span>AI coherence rating</span></div>` : ''}</div>
+    <h3>Requests</h3>
+    <div id="reqs">${rs.length ? '' : '<p class="muted small">No requests yet. The supervised step will assign requests to this driver using its description.</p>'}${rs.map(r => `<div class="req">
+      <div style="flex:1"><div>${esc(r.request)}</div>
+        <div class="q">“${esc(r.customer_quote)}”</div>
+        <div class="muted small">${esc(r.request_type)} · ${esc(r.outcome)}${r.is_primary ? ' · main reason for call' : ''}
+          · <a data-tr="${esc(r.key)}">transcript</a></div><div class="slot"></div></div></div>`).join('')}</div>`;
+}
+
+// clicks in the center: open a category, or show a transcript
+$('main').addEventListener('click', async e => {
+  const go = e.target.closest('[data-k]');
+  if (view === 'table') return;  // the table handles its own clicks
+  if (view === 'flow') return flowClick(e);
+  if (go && !e.target.closest('input')) return select(go.dataset.k || null);
+  const t = e.target.closest('[data-tr]');
+  if (!t) return;
+  const slot = t.closest('.req').querySelector('.slot');
+  if (slot.innerHTML) { slot.innerHTML = ''; return; }
+  const r = SRC.requests.find(x => x.key === t.dataset.tr);
+  const lines = await (await fetch(`/api/transcript?genuuid=${encodeURIComponent(r.genuuid)}`)).json();
+  const q = (r.customer_quote || '').slice(0, 40);
+  slot.innerHTML = `<div class="tr">${lines.map(l => `<div class="${q && l.includes(q) ? 'hl' : ''}">${esc(l)}</div>`).join('') || 'No transcript.'}</div>`;
+  const hl = slot.querySelector('.hl');
+  if (hl) slot.firstChild.scrollTop = hl.offsetTop - slot.firstChild.offsetTop - 40;
+});
+
+// ---------- right: edit the selected category ----------
+function renderEdit() {
+  if (!sel) {
+    $('edit').innerHTML = `<p class="muted small">Select a business area, topic or call driver to edit it.</p>
+      <h3>What you can do</h3><ul class="small muted" style="padding-left:16px">
+      <li><b>Merge</b> a category into another (right panel)</li>
+      <li><b>Add</b> a driver with a name and description (select a topic or driver)</li>
+      <li>Rename a category and rewrite its description</li><li>Mark a category as reviewed</li><li>Undo any edit</li></ul>`;
+    return;
+  }
+  const c = cat(sel), n = sizes(), lv = c.level;
+  const same = live(lv).filter(k => k !== sel).sort((a, b) => cat(a).name.localeCompare(cat(b).name));
+  $('edit').innerHTML = `<div class="muted small">${LABEL[lv]}</div>
+    <label class="f">Name</label><input id="ename" value="${esc(c.name)}">
+    <label class="f">Description</label><textarea id="edesc">${esc(c.description)}</textarea>
+    <div class="row"><button id="esave" class="primary" disabled>Save</button><span class="muted small">Ctrl+Enter</span></div>
+
+    <label class="f">Review</label>
+    <button id="erev">${c.reviewed ? '✓ Reviewed — click to unmark' : 'Mark as reviewed'}</button>
+
+    ${lv !== 'L1' ? `<label class="f">Add a driver ${lv === 'L2' ? 'to this topic' : 'next to this one'}</label>
+      <input id="aname" placeholder="New driver name">
+      <textarea id="adesc" placeholder="Description: what calls in this driver are about" style="min-height:60px;margin-top:6px"></textarea>
+      <div class="row"><button id="aadd" disabled>Add driver</button></div>` : ''}
+
+    <label class="f">Merge into another ${LABEL[lv].toLowerCase()}</label>
+    <div class="row" style="margin:0"><select id="emerge"><option value="">Choose…</option>${same.map(k =>
+      `<option value="${k}">${esc(cat(k).name)} (${n[k]})</option>`).join('')}</select>
+    <button id="edomerge" disabled>Merge</button></div>
+    <p class="muted small">This ${LABEL[lv].toLowerCase()}'s ${lv === 'L3' ? 'requests' : 'contents'} move to the one you choose, and this one is removed. The chosen name is kept; rename it afterwards if needed.</p>
+
+    <h3>Recent edits</h3>${S.log.length ? `<ul class="log">${S.log.slice(0, 8).map(x => `<li>${esc(x.text)}</li>`).join('')}</ul>` : '<p class="muted small">None yet.</p>'}`;
+
+  const dirty = () => { $('esave').disabled = $('ename').value.trim() === c.name && $('edesc').value.trim() === c.description; };
+  $('ename').oninput = dirty; $('edesc').oninput = dirty;
+  const saveDef = () => {
+    const name = $('ename').value.trim(), desc = $('edesc').value.trim();
+    if (!name || $('esave').disabled) return;
+    const what = name !== c.name ? `Renamed “${c.name}” to “${name}”` : `Edited the description of “${c.name}”`;
+    edit(what + (name !== c.name && desc !== c.description ? ' and its description' : ''), () => { c.name = name; c.description = desc; });
+  };
+  $('esave').onclick = saveDef;
+  $('edit').onkeydown = e => { if (e.key === 'Enter' && (e.ctrlKey || e.metaKey)) saveDef(); };
+  $('erev').onclick = () => edit(`${c.reviewed ? 'Unmarked' : 'Marked'} “${c.name}” as reviewed`, () => { c.reviewed = !c.reviewed; });
+  if (lv !== 'L1') {
+    const topic = lv === 'L2' ? sel : c.parent;
+    $('aname').oninput = () => { $('aadd').disabled = !$('aname').value.trim(); };
+    $('aadd').onclick = () => {
+      const name = $('aname').value.trim(), desc = $('adesc').value.trim();
+      let k;
+      edit(`Added driver “${name}” to “${cat(topic).name}”`, () => { k = newDriver(name, desc, topic); });
+      select(k);
+    };
+  }
+  $('emerge').onchange = () => { $('edomerge').disabled = !$('emerge').value; };
+  $('edomerge').onclick = () => {
+    const to = $('emerge').value, t = cat(to);
+    const what = lv === 'L3' ? `${n[sel]} requests` : `${kids(sel, n).length} ${LABEL[lv === 'L1' ? 'L2' : 'L3'].toLowerCase()}s (${n[sel]} requests)`;
+    if (!confirm(`Merge “${c.name}” into “${t.name}”?\n\n${what} move to “${t.name}”, and “${c.name}” is removed. You can undo this.`)) return;
+    doMerge(sel, to);
+    select(to);
+  };
+}
+
+// ---------- Flowchart tab: the hierarchy as boxes; ＋ adds, ✕ merges or removes, drag onto a box to merge ----------
+let collapsed = null, dragKey = null;
+const CHILD = { L1: 'L2', L2: 'L3' };
+function renderFlow() {
+  const n = sizes();
+  if (!collapsed) collapsed = new Set(live('L2'));  // start with drivers folded so the whole map fits
+  const box = k => {
+    const c = cat(k), ch = kids(k, n), lv = c.level;
+    return `<div class="box ${lv}${sel === k ? ' sel' : ''}" data-k="${k}" draggable="true" title="${esc(c.description)}">
+      ${CHILD[lv] ? `<button class="car" data-act="fold">${collapsed.has(k) ? '▸' : '▾'}</button>` : ''}
+      <span class="nm">${esc(c.name)}${c.reviewed ? ' <span class="ok">✓</span>' : ''}</span>
+      <span class="cnt">${n[k]}${CHILD[lv] && collapsed.has(k) ? ` · ${ch.length}` : ''}</span>
+      <span class="acts">${CHILD[lv] ? `<button data-act="add" title="Add a ${LABEL[CHILD[lv]].toLowerCase()} here">＋</button>` : ''}
+        <button data-act="del" title="Merge or remove">✕</button></span></div>`;
+  };
+  const branch = k => {
+    const ch = kids(k, n);
+    return `<div class="branch">${box(k)}${ch.length && !collapsed.has(k) ? `<div class="kids">${ch.map(branch).join('')}</div>` : ''}</div>`;
+  };
+  $('main').innerHTML = `<h2>Flowchart</h2>
+    <p class="muted small">Click a box to edit it on the right. Hover for ＋ (add below) and ✕ (merge or remove).
+      Drag a box onto another at the same level to merge them, or onto a box one level up to move it there. ▸ opens a level.
+      <a id="fopen">Open all</a> · <a id="ffold">Fold drivers</a> · <a id="faddl1">＋ Add a business area</a></p>
+    <div class="fc">${kids(null, n).map(branch).join('')}</div>`;
+  $('fopen').onclick = () => { collapsed = new Set(); renderFlow(); };
+  $('ffold').onclick = () => { collapsed = new Set(live('L2')); renderFlow(); };
+  $('faddl1').onclick = () => addDialog(null, 'L1');
+  const fc = $('main').querySelector('.fc');
+  fc.ondragstart = e => { const b = e.target.closest('.box'); dragKey = b && b.dataset.k; };
+  fc.ondragover = e => {
+    const b = e.target.closest('.box');
+    if (!b || !dragKey || b.dataset.k === dragKey) return;
+    const to = cat(b.dataset.k).level, from = cat(dragKey).level;
+    if (to === from || (to === UP[from] && b.dataset.k !== cat(dragKey).parent)) { e.preventDefault(); b.classList.add('drop'); }
+  };
+  fc.ondragleave = e => { const b = e.target.closest('.box'); if (b) b.classList.remove('drop'); };
+  fc.ondrop = e => {
+    e.preventDefault();
+    const b = e.target.closest('.box'), from = dragKey;
+    dragKey = null;
+    if (!b || !from) return;
+    b.classList.remove('drop');
+    if (cat(b.dataset.k).level === cat(from).level) return mergeDialog(from, b.dataset.k);
+    doMove(from, b.dataset.k);  // dropped on a box one level up: move it there
+  };
+}
+function flowClick(e) {
+  const b = e.target.closest('.box');
+  if (!b) return;
+  const k = b.dataset.k, act = e.target.closest('[data-act]')?.dataset.act;
+  if (act === 'fold') { collapsed.has(k) ? collapsed.delete(k) : collapsed.add(k); return renderFlow(); }
+  if (act === 'add') return addDialog(k, CHILD[cat(k).level]);
+  if (act === 'del') return deleteDialog(k);
+  select(k);
+}
+
+// small dialogs; resolve with the user's choice
+function modal(html, wire) {
+  const bg = document.createElement('div');
+  bg.className = 'modal-bg';
+  bg.innerHTML = `<div class="modal">${html}</div>`;
+  document.body.appendChild(bg);
+  const close = () => bg.remove();
+  bg.onclick = e => { if (e.target === bg || e.target.closest('[data-close]')) close(); };
+  bg.onkeydown = e => { if (e.key === 'Escape') close(); };
+  wire(bg, close);
+  bg.querySelector('input, select, button')?.focus();
+}
+function addDialog(parent, level) {
+  modal(`<h2>Add a ${LABEL[level].toLowerCase()}</h2>
+    ${parent ? `<p class="muted small">Under “${esc(cat(parent).name)}”</p>` : ''}
+    <label class="f">Name</label><input id="mname">
+    <label class="f">Description</label><textarea id="mdesc" style="min-height:70px" placeholder="What calls in it are about"></textarea>
+    <div class="row" style="margin-top:12px"><button id="mok" class="primary" disabled>Add</button><button data-close>Cancel</button></div>`,
+  (bg, close) => {
+    const nm = bg.querySelector('#mname'), ok = bg.querySelector('#mok');
+    nm.oninput = () => { ok.disabled = !nm.value.trim(); };
+    ok.onclick = () => {
+      let k;
+      edit(`Added ${LABEL[level].toLowerCase()} “${nm.value.trim()}”${parent ? ` to “${cat(parent).name}”` : ''}`,
+           () => { k = newCategory(level, nm.value.trim(), bg.querySelector('#mdesc').value.trim(), parent); });
+      if (parent) collapsed.delete(parent);
+      close(); select(k);
+    };
+  });
+}
+function mergeDialog(from, to) {
+  const n = sizes(), c = cat(from), t = cat(to);
+  modal(`<h2>Merge?</h2><p>Merge <b>${esc(c.name)}</b> (${n[from]} requests) into <b>${esc(t.name)}</b> (${n[to]} requests)?</p>
+    <p class="muted small">${c.level === 'L3' ? 'Its requests' : 'Its contents'} move into “${esc(t.name)}”, which keeps its name. You can undo this.</p>
+    <div class="row"><button id="mok" class="primary">Merge</button><button data-close>Cancel</button></div>`,
+  (bg, close) => { bg.querySelector('#mok').onclick = () => { doMerge(from, to); close(); select(to); }; });
+}
+function deleteDialog(k) {
+  const n = sizes(), c = cat(k), lv = c.level, ch = kids(k, n);
+  const others = live(lv).filter(x => x !== k).sort((a, b) => cat(a).name.localeCompare(cat(b).name));
+  modal(`<h2>${esc(c.name)}</h2><p class="muted small">${LABEL[lv]} · ${n[k]} requests${ch.length ? ` · ${ch.length} ${LABEL[CHILD[lv]].toLowerCase()}s` : ''}</p>
+    <div class="opt"><b>Merge into another ${LABEL[lv].toLowerCase()}</b>
+      <div class="row"><select id="mto"><option value="">Choose…</option>${others.map(x =>
+        `<option value="${x}">${esc(cat(x).name)} (${n[x]})</option>`).join('')}</select><button id="mmerge" disabled>Merge</button></div></div>
+    <div class="opt"><b>Remove</b><div class="muted small">${ch.length ? `Its ${ch.length} ${LABEL[CHILD[lv]].toLowerCase()}s are removed too. ` : ''}${
+      n[k] ? `${n[k]} requests are left out; the supervised step assigns requests to the remaining categories.` : 'It has no requests.'}</div>
+      <div class="row"><button id="mdel">Remove</button></div></div>
+    <div class="row" style="margin-top:12px"><button data-close>Cancel</button></div>`,
+  (bg, close) => {
+    const to = bg.querySelector('#mto'), mm = bg.querySelector('#mmerge');
+    to.onchange = () => { mm.disabled = !to.value; };
+    mm.onclick = () => { doMerge(k, to.value); close(); select(to.value); };
+    bg.querySelector('#mdel').onclick = () => { doRemove(k); close(); render(); };
+  });
+}
+
+// ---------- Table tab: edit the taxonomy like a spreadsheet, one row per category ----------
+let tableFind = '';
+function renderTable() {
+  const n = sizes(), f = tableFind.toLowerCase();
+  const hit = k => !f || cat(k).name.toLowerCase().includes(f) || cat(k).description.toLowerCase().includes(f) || kids(k, n).some(hit);
+  const parents = lv => live(lv).sort((a, b) => cat(a).name.localeCompare(cat(b).name));
+  const opts = { L2: parents('L1'), L3: parents('L2') };
+  const row = (k, cls, indent) => {
+    const c = cat(k);
+    return `<tr class="${cls}" data-k="${k}">
+      <td class="lv">${LABEL[c.level]}</td>
+      <td style="width:28%;padding-left:${6 + indent}px"><input class="nm" data-f="name" value="${esc(c.name)}"></td>
+      <td><textarea data-f="description" rows="1" placeholder="Description">${esc(c.description)}</textarea></td>
+      <td style="width:19%">${c.level === 'L1' ? '<span class="muted small" style="padding:6px;display:block">—</span>'
+        : `<select data-f="parent">${opts[c.level].map(p => `<option value="${p}" ${p === c.parent ? 'selected' : ''}>${esc(cat(p).name)}</option>`).join('')}</select>`}</td>
+      <td class="num muted small" style="padding-top:9px">${n[k]}</td>
+      <td style="width:1%"><button class="x" data-act="del" title="Remove">✕</button></td></tr>`;
+  };
+  const add = (level, parent, label) => `<tr class="add"><td></td><td colspan="5" style="padding-left:${level === 'L3' ? 40 : level === 'L2' ? 22 : 6}px">
+    <a data-add="${level}" data-parent="${parent || ''}">＋ ${label}</a></td></tr>`;
+  $('main').innerHTML = `<h2>Table</h2>
+    <p class="muted small">Edit names and descriptions in place; pick a parent to move a category; ✕ removes it (and what is under it).
+      Every change is saved and can be undone. The supervised step will assign requests to these categories.</p>
+    <input id="tfind" type="search" placeholder="Filter by name or description…" value="${esc(tableFind)}" style="max-width:360px;margin-bottom:8px">
+    <table class="ed"><tr class="muted small"><td></td><td>Name</td><td>Description</td><td>Parent</td><td class="num">Requests</td><td></td></tr>
+    ${kids(null, n).filter(hit).map(a => row(a, 'a', 0)
+      + kids(a, n).filter(hit).map(t => row(t, 't', 16)
+        + kids(t, n).filter(hit).map(d => row(d, 'd', 32)).join('')
+        + add('L3', t, `Add a driver to “${esc(cat(t).name)}”`)).join('')
+      + add('L2', a, `Add a topic to “${esc(cat(a).name)}”`)).join('')}
+    ${add('L1', null, 'Add a business area')}</table>`;
+  const tb = $('main').querySelector('table.ed');
+  $('tfind').oninput = () => { tableFind = $('tfind').value; renderTable(); $('tfind').focus(); };
+  tb.onchange = e => {
+    const tr = e.target.closest('tr[data-k]'), fld = e.target.dataset.f;
+    if (!tr || !fld) return;
+    const k = tr.dataset.k, c = cat(k), v = e.target.value.trim();
+    if (fld === 'parent') return doMove(k, v);
+    if (fld === 'name' && !v) { e.target.value = c.name; return; }  // a name can't be empty
+    if (v === c[fld]) return;
+    edit(fld === 'name' ? `Renamed “${c.name}” to “${v}”` : `Edited the description of “${c.name}”`, () => { c[fld] = v; }, true);
+  };
+  tb.onclick = e => {
+    const a = e.target.closest('[data-add]');
+    if (a) {
+      const level = a.dataset.add, parent = a.dataset.parent || null;
+      let k;
+      edit(`Added ${LABEL[level].toLowerCase()} “New ${LABEL[level].toLowerCase()}”${parent ? ` to “${cat(parent).name}”` : ''}`,
+           () => { k = newCategory(level, `New ${LABEL[level].toLowerCase()}`, '', parent); });
+      const inp = $('main').querySelector(`tr[data-k="${k}"] input.nm`);
+      if (inp) { inp.focus(); inp.select(); }
+      return;
+    }
+    const tr = e.target.closest('tr[data-k]');
+    if (tr && e.target.closest('[data-act=del]') && removeConfirm(tr.dataset.k)) doRemove(tr.dataset.k);
+  };
+}
+
+// ---------- Recluster tab: run supervised/recluster.py on the review and show what moved ----------
+async function renderRecluster(busyText) {
+  const d = busyText ? {} : await (await fetch('/api/recluster')).json();
+  if (view !== 'recluster') return;
+  const r = d.report;
+  const path = x => x && x.L3 ? `${esc(x.L2)} › <b>${esc(x.L3)}</b>` : '<span class="muted">no driver</span>';
+  const row = (k, html) => `<div class="req"><div style="flex:1">${html}
+    <div class="muted small"><a data-tr="${esc(k)}">transcript</a></div><div class="slot"></div></div></div>`;
+  let body = '';
+  if (busyText) body = `<p class="muted">${esc(busyText)}</p>`;
+  else if (!r) body = '<p class="muted">Not run yet.</p>';
+  else {
+    const ch = r.changed_vs_review, moved = r.changed_requests;
+    const scopes = [...new Set(moved.map(m => m.scope))].sort((a, b) => (a === 'never clustered') - (b === 'never clustered'));
+    body = `${d.stale ? '<div class="banner">You edited the review after this recluster ran. Run it again to include the latest edits.</div>' : ''}
+      <p class="muted small">Last run ${new Date(d.ran).toLocaleString()}. Output: <code>supervised/result/</code></p>
+      <h3>Edits found, and what they recluster</h3>
+      ${r.edits.length ? `<ul class="log">${r.edits.map(e => `<li>${esc(e.edit)} ${({ L1: 'area', L2: 'topic', L3: 'driver' })[e.level]}
+        “${esc(e.name)}” → recluster <b>${esc(e.scope)}</b></li>`).join('')}</ul>`
+        : '<p class="muted small">No added, removed or merged categories: nothing reviewed is reclustered.</p>'}
+      <div class="stats">
+        <div class="stat"><b>${r.requests_reclustered}</b><span>requests reclustered</span></div>
+        <div class="stat"><b>${r.untouched}</b><span>untouched</span></div>
+        <div class="stat"><b>${ch.L3} · ${ch.L2} · ${ch.L1}</b><span>changed driver · topic · area</span></div>
+        <div class="stat"><b>${r.newly_placed}</b><span>placed (had no driver)</span></div>
+        <div class="stat"><b>${r.needs_review}</b><span>need review</span></div></div>
+      <h3>Requests that changed (${moved.length})</h3>
+      ${scopes.map(sc => `<h4>${esc(sc)}</h4>` + moved.filter(m => m.scope === sc).map(m => row(`${m.genuuid}|${m.request_idx}`,
+        `<div>${esc(m.request)} ${m.before.L3 ? m.levels_changed.filter(l => l !== 'L3').map(l => `<span class="badge ch">${l} changed</span>`).join(' ') : '<span class="badge">newly placed</span>'}</div>
+         <div class="small">${path(m.before)} → ${path(m.after)} <span class="muted">· similarity ${m.similarity}</span></div>`)).join('')).join('')
+        || '<p class="muted small">None.</p>'}
+      <h3>Need review (${r.needs_review_requests.length})</h3>
+      <p class="muted small">No driver fits well enough, so these were not forced in. The closest one is shown.</p>
+      ${r.needs_review_requests.map(m => row(`${m.genuuid}|${m.request_idx}`,
+        `<div>${esc(m.request)}</div><div class="small muted">closest: ${esc(m.closest)} · similarity ${m.similarity} · ${esc(m.scope)}</div>`)).join('')}`;
+  }
+  $('main').innerHTML = `<h2>Recluster</h2>
+    <p class="muted">Reclusters only inside the parent of each category you added, removed or merged: a driver's topic,
+      a topic's area, or everything for an area. Renames, description edits and moves recluster nothing.
+      Requests outside those scopes keep their driver; requests that were never clustered are placed where they fit.</p>
+    <div class="row"><button id="rrun" class="primary" ${busyText ? 'disabled' : ''}>Run recluster</button>
+      <span id="rstat" class="muted small"></span></div>${body}`;
+  $('rrun').onclick = async () => {
+    renderRecluster('Saving your edits and reclustering…');
+    if (!(await saveNow())) return renderRecluster();
+    const resp = await fetch('/api/recluster', { method: 'POST' });
+    if (!resp.ok) { const e = await resp.json(); await renderRecluster(); $('rstat').textContent = 'Failed: ' + e.error; return; }
+    renderRecluster();
+  };
+}
+
+// ---------- Result tab: the reviewed taxonomy as it goes to the supervised step, vs. the automatic one ----------
+const orig = k => SRC.categories[k];
+function origSizes() {
+  const n = {};
+  for (const l3 of Object.values(SRC.assign)) for (let k = l3; k; k = orig(k).parent) n[k] = (n[k] || 0) + 1;
+  return n;
+}
+function changes(k) {
+  const c = cat(k), o = orig(k), out = [];
+  if (!o) return [`new ${LABEL[c.level].toLowerCase()}`];
+  if (c.name !== o.name) out.push(`renamed (was “${o.name}”)`);
+  if (c.description !== o.description) out.push('description edited');
+  if (c.parent !== o.parent) out.push(`moved from “${cat(o.parent).name}”`);
+  const merged = Object.keys(S.categories).filter(m => cat(m).merged_into === k);
+  if (merged.length) out.push(`merged from ${merged.map(m => `“${cat(m).name}”`).join(', ')}`);
+  return out;
+}
+function renderResult() {
+  const n = sizes(), o = origSizes();
+  const count = lv => [Object.keys(SRC.categories).filter(k => orig(k).level === lv).length, live(lv).length];
+  const before = Object.values(SRC.assign).filter(Boolean).length, after = inDrivers();
+  const added = live().filter(k => !orig(k)).length, merged = Object.values(S.categories).filter(c => c.merged_into).length;
+  const removedN = Object.values(S.categories).filter(c => c.removed).length;
+  const rev = live().filter(k => cat(k).reviewed).length;
+  const ba = (label, [a, b]) => `<div class="stat ba"><b>${a}</b>${a !== b ? `<span class="arrow">→</span><b>${b}</b>` : ''}<span style="display:block">${label}</span></div>`;
+  const delta = k => { const d = n[k] - (o[k] || 0); return d ? `<span class="${d > 0 ? 'up' : 'down'}">${d > 0 ? '+' : ''}${d}</span>` : ''; };
+  const touched = k => changes(k).length || n[k] !== (o[k] || 0);
+  const anyBelow = k => touched(k) || kids(k, n).some(anyBelow);
+  const row = (k, cls) => `<tr class="${cls}"><td>${esc(cat(k).name)}
+      ${changes(k).map(x => ` <span class="badge ch">${esc(x)}</span>`).join('')}
+      ${cat(k).reviewed ? ' <span class="badge ok">✓ reviewed</span>' : ''}</td>
+      <td class="num">${n[k]}</td><td class="num">${delta(k)}</td><td class="num muted small">${pct(n[k], after)}</td></tr>`;
+  const show = k => !onlyChanged || anyBelow(k);
+  $('main').innerHTML = `<h2>Reviewed result</h2>
+    <p class="muted">The taxonomy and labels as they will go to the supervised step (saved in <code>feedback/result/</code>), compared with the automatic results.</p>
+    <div class="stats">${ba('business areas', count('L1'))}${ba('topics', count('L2'))}${ba('call drivers', count('L3'))}
+      ${ba('requests in drivers', [before, after])}
+      <div class="stat"><b>${added}</b><span>categories added</span></div><div class="stat"><b>${merged}</b><span>merged away</span></div><div class="stat"><b>${removedN}</b><span>removed</span></div>
+      <div class="stat"><b>${rev}/${live().length}</b><span>categories reviewed</span></div></div>
+    <label class="small"><input id="only" type="checkbox" style="width:auto" ${onlyChanged ? 'checked' : ''}> show only changed categories</label>
+    <table class="res" style="margin-top:8px"><tr class="muted small"><td>Category</td><td class="num">Requests</td><td class="num">Change</td><td class="num">Share</td></tr>
+      ${kids(null, n).filter(show).map(l1 => row(l1, 'l1') + kids(l1, n).filter(show).map(l2 => row(l2, 'l2')
+        + kids(l2, n).filter(show).map(l3 => row(l3, 'l3')).join('')).join('')).join('')}</table>
+    <h3>All edits (${S.log.length})</h3>${S.log.length ? `<ul class="log">${S.log.map(x =>
+      `<li>${esc(x.text)} <span class="muted">· ${new Date(x.t).toLocaleString()}</span></li>`).join('')}</ul>` : '<p class="muted small">No edits yet.</p>'}`;
+  $('only').onchange = () => { onlyChanged = $('only').checked; renderResult(); };
+}
+
+document.addEventListener('keydown', e => {
+  if (e.key === 'z' && (e.ctrlKey || e.metaKey) && !e.target.closest('input, textarea')) { e.preventDefault(); undo(); }
+});
+$('undo').onclick = undo;
+$('reset').onclick = async () => {
+  if (!confirm('Discard all edits and start again from the automatic results?')) return;
+  await fetch('/api/reset', { method: 'POST' });
+  location.reload();
+};
+
+(async () => {
+  SRC = await (await fetch('/api/source')).json();
+  S = SRC.saved || { categories: structuredClone(SRC.categories), assign: { ...SRC.assign }, log: [] };
+  $('save').textContent = SRC.saved ? 'Loaded saved review' : 'No edits yet';
+  render();
+})();
+</script>
+</body>
+</html>
